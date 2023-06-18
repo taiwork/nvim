@@ -79,6 +79,16 @@ _G.packer_plugins = {
     path = "/Users/t_sato3/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["auto-save.nvim"] = {
+    loaded = true,
+    path = "/Users/t_sato3/.local/share/nvim/site/pack/packer/start/auto-save.nvim",
+    url = "https://github.com/pocco81/auto-save.nvim"
+  },
+  ["auto-session"] = {
+    loaded = true,
+    path = "/Users/t_sato3/.local/share/nvim/site/pack/packer/start/auto-session",
+    url = "https://github.com/rmagatti/auto-session"
+  },
   ["bufferline.nvim"] = {
     loaded = true,
     path = "/Users/t_sato3/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
@@ -113,6 +123,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/t_sato3/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["copilot.lua"] = {
+    loaded = true,
+    path = "/Users/t_sato3/.local/share/nvim/site/pack/packer/start/copilot.lua",
+    url = "https://github.com/zbirenbaum/copilot.lua"
   },
   ["lspkind-nvim"] = {
     loaded = true,
@@ -198,6 +213,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/t_sato3/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-uppercase-sql"] = {
+    loaded = true,
+    path = "/Users/t_sato3/.local/share/nvim/site/pack/packer/start/vim-uppercase-sql",
+    url = "https://github.com/jsborjesson/vim-uppercase-sql"
   }
 }
 

@@ -84,6 +84,27 @@ return packer.startup(function(use)
 
 	use({ "windwp/nvim-ts-autotag" })
 
+  -- autoSave
+  use({ "pocco81/auto-save.nvim" })
+
+  -- session
+  use({ "rmagatti/auto-session" })
+
+  -- markdown
+  -- use({ "SidOfc/mkdx" })
+
+  -- SQL
+  use({ "jsborjesson/vim-uppercase-sql" })
+
+  -- copilot
+	use({ "zbirenbaum/copilot.lua" }, {
+    cmd = "Copilot",
+		event = "InsertEnter",
+		config = function()
+require("copilot").setup({})
+		end,
+	})
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
