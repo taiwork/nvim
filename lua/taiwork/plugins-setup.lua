@@ -115,14 +115,7 @@ return packer.startup(function(use)
 	use({ "rmagatti/auto-session" })
 
 	-- copilot
-	use({
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		event = "InsertEnter",
-		config = function()
-			require("copilot").setup({ filetypes = { markdown = true } })
-		end,
-	})
+	use("github/copilot.vim")
 
 	if packer_bootstrap then
 		require("packer").sync()
