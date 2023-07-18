@@ -169,6 +169,9 @@ return packer.startup(function(use)
 	use("tpope/vim-rbenv")
 	use("tpope/vim-bundler")
 
+	-- diff view
+	use("sindrets/diffview.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
