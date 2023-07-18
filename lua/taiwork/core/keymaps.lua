@@ -35,6 +35,7 @@ keymap.set("n", "<leader>sm", ":MaximizerToggle<CR>") -- toggle split window max
 
 -- nvim-tree
 keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
+keymap.set("n", "<leader>nf", ":NvimTreeFindFile<CR>") -- open file explorer and highlight current file
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
@@ -43,5 +44,26 @@ keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string u
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
 
+----------------------
+-- Original Keybinds
+----------------------
+
 -- terminal
 keymap.set("t", "<ESC>", "<C-\\><C-n>") -- exit terminal mode with <ESC>
+keymap.set("t", "jj", "<C-\\><C-n>") -- exit terminal mode with <ESC>
+keymap.set("n", "<leader>wo", ":belowright 15sp term://zsh<CR>") -- open terminal window
+
+-- cheat
+keymap.set("n", "<leader>?", ":Cheat<CR>") -- open cheat sheet
+
+-- vim-fugitive
+keymap.set("n", "<leader>gd", ":Gdiff master<CR>") -- open git diff in split window
+keymap.set("n", "<leader>gb", ":Git blame<CR>") -- open git blame in split window
+
+----------------------
+-- Script Keybinds
+----------------------
+
+-- copy relative file path
+local copy_file_path = require("taiwork.scripts.copy_file_path")
+vim.keymap.set("n", "<leader>cf", copy_file_path.copy_relative_file_path, { silent = true, noremap = true })

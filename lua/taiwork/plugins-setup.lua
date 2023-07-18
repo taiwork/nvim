@@ -110,12 +110,64 @@ return packer.startup(function(use)
 
 	-- autoSave
 	-- use({ "pocco81/auto-save.nvim" })
+	use("907th/vim-auto-save")
 
 	-- session
 	use({ "rmagatti/auto-session" })
+	use({ "ToruIwashita/git-switcher.vim" })
 
 	-- copilot
 	use("github/copilot.vim")
+
+	-- cheatsheet
+	use("reireias/vim-cheatsheet")
+	use({
+		"folke/which-key.nvim",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+			require("which-key").setup({
+				-- your configuration comes here
+				-- or leave it empty to use the default settings
+				-- refer to the configuration section below
+			})
+		end,
+	})
+
+	-- indent line
+	use("Yggdroot/indentLine")
+
+	-- rainbow-csv
+	use({
+		"cameron-wags/rainbow_csv.nvim",
+		config = function()
+			require("rainbow_csv").setup()
+		end,
+		-- optional lazy-loading below
+		module = {
+			"rainbow_csv",
+			"rainbow_csv.fns",
+		},
+		ft = {
+			"csv",
+			"tsv",
+			"csv_semicolon",
+			"csv_whitespace",
+			"csv_pipe",
+			"rfc_csv",
+			"rfc_semicolon",
+		},
+	})
+
+	-- git diff
+	use("airblade/vim-gitgutter")
+	use("tpope/vim-fugitive")
+
+	-- ctags
+	use("vim-ruby/vim-ruby")
+	use("tpope/vim-rails")
+	use("tpope/vim-rbenv")
+	use("tpope/vim-bundler")
 
 	if packer_bootstrap then
 		require("packer").sync()

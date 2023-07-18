@@ -18,3 +18,5 @@ require("taiwork.plugins.gitsigns")
 -- original
 require("taiwork.plugins.auto-session")
 require("taiwork.plugins.copilot")
+require("taiwork.plugins.cheatsheet")
+require("taiwork.plugins.vim-auto-save")
