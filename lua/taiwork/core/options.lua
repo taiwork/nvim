@@ -39,5 +39,3 @@ opt.iskeyword:append("-")
 
 -- swap file
 opt.swapfile = false
-
-vim.cmd("autocmd TermOpen * startinsert")

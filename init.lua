@@ -1,8 +1,10 @@
 require("taiwork.plugins-setup")
-require("taiwork.core.options")
-require("taiwork.core.keymaps")
+require("taiwork.core.autocmds")
 require("taiwork.core.colorscheme")
 require("taiwork.core.commands")
+require("taiwork.core.keymaps")
+require("taiwork.core.options")
+
 require("taiwork.plugins.comment")
 require("taiwork.plugins.nvim-tree")
 require("taiwork.plugins.lualine")
