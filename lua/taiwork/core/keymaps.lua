@@ -64,6 +64,9 @@ keymap.set("n", "<leader>gb", ":Git blame<CR>") -- open git blame in split windo
 keymap.set("n", "<leader>dc", ":DiffviewClose<CR>") -- close diffview
 keymap.set("n", "<leader>dr", ":DiffviewRefresh<CR>") -- refresh diffview
 
+-- git-switcher
+keymap.set("n", "<leader>gl", ":GswLoad<CR>") -- load session in now session
+
 ----------------------
 -- Script Keybinds
 ----------------------
