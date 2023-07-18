@@ -170,7 +170,7 @@ return packer.startup(function(use)
 	use("tpope/vim-bundler")
 
 	-- diff view
-	use("sindrets/diffview.nvim")
+	use({ "sindrets/diffview.nvim", enhanced_diff_hl = true })
 
 	if packer_bootstrap then
 		require("packer").sync()
