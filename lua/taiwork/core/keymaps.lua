@@ -63,8 +63,6 @@ keymap.set("n", "<leader>gb", ":Git blame<CR>") -- open git blame in split windo
 -- diffview
 keymap.set("n", "<leader>dc", ":DiffviewClose<CR>") -- close diffview
 keymap.set("n", "<leader>dr", ":DiffviewRefresh<CR>") -- refresh diffview
-keymap.set("n", "<leader>dn", ":DiffviewNext<CR>") -- go to next file in diffview
-keymap.set("n", "<leader>dp", ":DiffviewPrev<CR>") -- go to previous file in diffview
 
 ----------------------
 -- Script Keybinds
