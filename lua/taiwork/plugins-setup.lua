@@ -172,6 +172,9 @@ return packer.startup(function(use)
 	-- diff view
 	use({ "sindrets/diffview.nvim", enhanced_diff_hl = true })
 
+	-- smart subvert
+	use("tpope/vim-abolish")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

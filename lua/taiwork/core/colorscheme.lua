@@ -11,9 +11,9 @@ function FixNightfly()
 	vim.api.nvim_set_hl(0, "DiffviewDiffAddAsDelete", { bg = "#1c1f24" })
 	vim.api.nvim_set_hl(0, "DiffDelete", { bg = "none", fg = "#81A1C1" })
 	vim.api.nvim_set_hl(0, "DiffviewDiffDelete", { bg = "none", fg = "#81A1C1" })
-	vim.api.nvim_set_hl(0, "DiffAdd", { bg = "#3B6F41" })
+	vim.api.nvim_set_hl(0, "DiffAdd", { bg = "#1B4F21" })
 	vim.api.nvim_set_hl(0, "DiffChange", { bg = "#3B5C98" })
-	vim.api.nvim_set_hl(0, "DiffText", { bg = "#3B4498" })
+	vim.api.nvim_set_hl(0, "DiffText", { bg = "#99783C" })
 end
 
 FixNightfly()

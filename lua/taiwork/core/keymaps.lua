@@ -61,11 +61,16 @@ keymap.set("n", "<leader>gd", ":Gdiff master<CR>") -- open git diff in split win
 keymap.set("n", "<leader>gb", ":Git blame<CR>") -- open git blame in split window
 
 -- diffview
+keymap.set("n", "<leader>do", ":DiffviewOpen HEAD<CR>") -- open HEAD diffview
 keymap.set("n", "<leader>dc", ":DiffviewClose<CR>") -- close diffview
 keymap.set("n", "<leader>dr", ":DiffviewRefresh<CR>") -- refresh diffview
 
 -- git-switcher
 keymap.set("n", "<leader>gl", ":GswLoad<CR>") -- load session in now session
+keymap.set("n", "<leader>gs", ":GswSave<CR>") -- save current session
+
+-- vim-rails
+keymap.set("n", "<leader>rr", ":R<CR>") -- open rails model, controller, view, etc.
 
 ----------------------
 -- Script Keybinds
