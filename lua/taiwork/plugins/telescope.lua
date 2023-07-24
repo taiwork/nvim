@@ -25,6 +25,35 @@ telescope.setup({
 			},
 		},
 	},
+	extensions = {
+		frecency = {
+			workspaces = {
+				["rails_controller"] = "./app/controllers",
+				["rails_model"] = "./app/models",
+				["rails_spec"] = "./spec",
+				["next_page"] = "./src/pages",
+				["next_container"] = "./src/containers",
+				["next_component"] = "./src/components",
+				["next_util"] = "./src/utils",
+			},
+		},
+	},
 })
 
 telescope.load_extension("fzf")
+
+-- frecency mappings
+local keymap = vim.keymap -- for conciseness
+local frecency_str = "<Cmd>lua require('telescope').extensions.frecency.frecency({ workspace = '%s' })<CR>"
+local frecency_opt = { noremap = true, silent = true }
+
+-- backend frecency mappings
+keymap.set("n", "<leader>cc", string.format(frecency_str, "rails_controller"), frecency_opt)
+keymap.set("n", "<leader>mm", string.format(frecency_str, "rails_model"), frecency_opt)
+keymap.set("n", "<leader>ss", string.format(frecency_str, "rails_spec"), frecency_opt)
+
+-- frontend frecency mappings
+keymap.set("n", "<leader>pa", string.format(frecency_str, "next_page"), frecency_opt)
+keymap.set("n", "<leader>cn", string.format(frecency_str, "next_container"), frecency_opt)
+keymap.set("n", "<leader>cm", string.format(frecency_str, "next_component"), frecency_opt)
+keymap.set("n", "<leader>ut", string.format(frecency_str, "next_util"), frecency_opt)
