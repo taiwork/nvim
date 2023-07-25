@@ -30,6 +30,7 @@ telescope.setup({
 			workspaces = {
 				["rails_controller"] = "./app/controllers",
 				["rails_model"] = "./app/models",
+				["rails_service"] = "./app/services",
 				["rails_spec"] = "./spec",
 				["next_page"] = "./src/pages",
 				["next_container"] = "./src/containers",
@@ -48,9 +49,10 @@ local frecency_str = "<Cmd>lua require('telescope').extensions.frecency.frecency
 local frecency_opt = { noremap = true, silent = true }
 
 -- backend frecency mappings
-keymap.set("n", "<leader>cc", string.format(frecency_str, "rails_controller"), frecency_opt)
-keymap.set("n", "<leader>mm", string.format(frecency_str, "rails_model"), frecency_opt)
-keymap.set("n", "<leader>ss", string.format(frecency_str, "rails_spec"), frecency_opt)
+keymap.set("n", "<leader>co", string.format(frecency_str, "rails_controller"), frecency_opt)
+keymap.set("n", "<leader>mo", string.format(frecency_str, "rails_model"), frecency_opt)
+keymap.set("n", "<leader>se", string.format(frecency_str, "rails_service"), frecency_opt)
+keymap.set("n", "<leader>sp", string.format(frecency_str, "rails_spec"), frecency_opt)
 
 -- frontend frecency mappings
 keymap.set("n", "<leader>pa", string.format(frecency_str, "next_page"), frecency_opt)
