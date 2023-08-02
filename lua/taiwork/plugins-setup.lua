@@ -56,7 +56,13 @@ return packer.startup(function(use)
 
 	-- fuzzy finding w/ telescope
 	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
-	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
+	use({
+		"nvim-telescope/telescope.nvim",
+		branch = "0.1.x",
+		requires = {
+			{ "nvim-telescope/telescope-live-grep-args.nvim" },
+		},
+	})
 	use({
 		"nvim-telescope/telescope-frecency.nvim",
 		config = function()
@@ -170,9 +176,10 @@ return packer.startup(function(use)
 	use("airblade/vim-gitgutter")
 	use("tpope/vim-fugitive")
 
-	-- ctags
+	-- ctags & rails
 	use("vim-ruby/vim-ruby")
 	use("tpope/vim-rails")
+	use("AndrewRadev/rails_extra.vim")
 	use("tpope/vim-rbenv")
 	use("tpope/vim-bundler")
 
@@ -181,6 +188,19 @@ return packer.startup(function(use)
 
 	-- smart subvert
 	use("tpope/vim-abolish")
+
+	-- easy motion
+	use({
+		"phaazon/hop.nvim",
+		branch = "v2", -- optional but strongly recommended
+		config = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+		end,
+	})
+
+	-- tagbar
+	use("preservim/tagbar")
 
 	if packer_bootstrap then
 		require("packer").sync()

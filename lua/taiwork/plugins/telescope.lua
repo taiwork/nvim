@@ -10,6 +10,8 @@ if not actions_setup then
 	return
 end
 
+local lga_actions = require("telescope-live-grep-args.actions")
+
 -- configure telescope
 telescope.setup({
 	-- configure custom mappings
@@ -26,15 +28,30 @@ telescope.setup({
 		},
 	},
 	extensions = {
+		live_grep_args = {
+			auto_quoting = true, -- enable/disable auto-quoting
+			-- define mappings, e.g.
+			mappings = { -- extend mappings
+				i = {
+					["<C-l>"] = lga_actions.quote_prompt(),
+					["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+					["<C-w>"] = lga_actions.quote_prompt({ postfix = " -w " }),
+				},
+			},
+		},
 		frecency = {
 			workspaces = {
 				["rails_controller"] = "./app/controllers",
 				["rails_model"] = "./app/models",
 				["rails_service"] = "./app/services",
+				["rails_schema"] = "./db/schema",
+				["rails_view"] = "./app/views",
+				["rails_view_partials"] = "./app/views/api/partials",
 				["rails_spec"] = "./spec",
 				["next_page"] = "./src/pages",
 				["next_container"] = "./src/containers",
 				["next_component"] = "./src/components",
+				["next_model"] = "./src/models",
 				["next_util"] = "./src/utils",
 			},
 		},
@@ -42,20 +59,35 @@ telescope.setup({
 })
 
 telescope.load_extension("fzf")
+telescope.load_extension("live_grep_args")
 
--- frecency mappings
-local keymap = vim.keymap -- for conciseness
-local frecency_str = "<Cmd>lua require('telescope').extensions.frecency.frecency({ workspace = '%s' })<CR>"
-local frecency_opt = { noremap = true, silent = true }
+_M = {}
 
--- backend frecency mappings
-keymap.set("n", "<leader>co", string.format(frecency_str, "rails_controller"), frecency_opt)
-keymap.set("n", "<leader>mo", string.format(frecency_str, "rails_model"), frecency_opt)
-keymap.set("n", "<leader>se", string.format(frecency_str, "rails_service"), frecency_opt)
-keymap.set("n", "<leader>sp", string.format(frecency_str, "rails_spec"), frecency_opt)
+function _M.setup_project_keymaps()
+	local current_dir = vim.fn.getcwd()
 
--- frontend frecency mappings
-keymap.set("n", "<leader>pa", string.format(frecency_str, "next_page"), frecency_opt)
-keymap.set("n", "<leader>cn", string.format(frecency_str, "next_container"), frecency_opt)
-keymap.set("n", "<leader>cm", string.format(frecency_str, "next_component"), frecency_opt)
-keymap.set("n", "<leader>ut", string.format(frecency_str, "next_util"), frecency_opt)
+	-- frecency mappings
+	local keymap = vim.keymap -- for conciseness
+	local frecency_str = "<Cmd>lua require('telescope').extensions.frecency.frecency({ workspace = '%s' })<CR>"
+	local frecency_opt = { noremap = true, silent = true }
+
+	if string.find(current_dir, "frontend") then
+		-- frontend frecency mappings
+		keymap.set("n", "<leader>pa", string.format(frecency_str, "next_page"), frecency_opt)
+		keymap.set("n", "<leader>cn", string.format(frecency_str, "next_container"), frecency_opt)
+		keymap.set("n", "<leader>cm", string.format(frecency_str, "next_component"), frecency_opt)
+		keymap.set("n", "<leader>mo", string.format(frecency_str, "next_model"), frecency_opt)
+		keymap.set("n", "<leader>ut", string.format(frecency_str, "next_util"), frecency_opt)
+	else
+		-- backend frecency mappings
+		keymap.set("n", "<leader>co", string.format(frecency_str, "rails_controller"), frecency_opt)
+		keymap.set("n", "<leader>mo", string.format(frecency_str, "rails_model"), frecency_opt)
+		keymap.set("n", "<leader>se", string.format(frecency_str, "rails_service"), frecency_opt)
+		keymap.set("n", "<leader>sc", string.format(frecency_str, "rails_schema"), frecency_opt)
+		keymap.set("n", "<leader>vi", string.format(frecency_str, "rails_view"), frecency_opt)
+		keymap.set("n", "<leader>vp", string.format(frecency_str, "rails_view_partials"), frecency_opt)
+		keymap.set("n", "<leader>sp", string.format(frecency_str, "rails_spec"), frecency_opt)
+	end
+end
+
+vim.cmd([[autocmd VimEnter * lua _M.setup_project_keymaps()]])
