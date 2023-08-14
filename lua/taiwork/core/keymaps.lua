@@ -38,7 +38,7 @@ keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 keymap.set("n", "<leader>nf", ":NvimTreeFindFile<CR>") -- open file explorer and highlight current file
 
 -- telescope
-keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
+keymap.set("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>") -- find files within current working directory, respects .gitignore
 -- keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
 keymap.set("n", "<leader>fs", "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>") -- find string in current working directory as you type
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
@@ -63,7 +63,8 @@ keymap.set("n", "<leader>gd", ":Gdiff master<CR>") -- open git diff in split win
 keymap.set("n", "<leader>gb", ":Git blame<CR>") -- open git blame in split window
 
 -- diffview
-keymap.set("n", "<leader>do", ":DiffviewOpen HEAD<CR>") -- open HEAD diffview
+keymap.set("n", "<leader>dh", ":DiffviewOpen HEAD<CR>") -- open HEAD diffview
+keymap.set("n", "<leader>do", ":DiffviewOpen master<CR>") -- open master diffview
 keymap.set("n", "<leader>dc", ":DiffviewClose<CR>") -- close diffview
 keymap.set("n", "<leader>dr", ":DiffviewRefresh<CR>") -- refresh diffview
 

@@ -9,13 +9,22 @@ local actions_setup, actions = pcall(require, "telescope.actions")
 if not actions_setup then
 	return
 end
-
 local lga_actions = require("telescope-live-grep-args.actions")
 
 -- configure telescope
 telescope.setup({
 	-- configure custom mappings
 	defaults = {
+		vimgrep_arguments = {
+			"rg",
+			"--color=never",
+			"--no-heading",
+			"--with-filename",
+			"--line-number",
+			"--column",
+			"--smart-case",
+			"--hidden", -- このオプションを追加
+		},
 		mappings = {
 			i = {
 				["<C-k>"] = actions.move_selection_previous, -- move to prev result
