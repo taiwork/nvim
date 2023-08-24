@@ -202,6 +202,9 @@ return packer.startup(function(use)
 	-- tagbar
 	use("preservim/tagbar")
 
+	-- multiple cursors
+	use("mg979/vim-visual-multi")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

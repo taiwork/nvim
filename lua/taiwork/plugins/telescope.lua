@@ -24,7 +24,9 @@ telescope.setup({
 			"--column",
 			"--smart-case",
 			"--hidden", -- このオプションを追加
+			"--glob=!**/.git/**", -- .git ディレクトリを除外
 		},
+		-- find_command = { "fd", "--type", "f", "--hidden", "--exclude", ".git" },
 		mappings = {
 			i = {
 				["<C-k>"] = actions.move_selection_previous, -- move to prev result
@@ -43,13 +45,14 @@ telescope.setup({
 			mappings = { -- extend mappings
 				i = {
 					["<C-l>"] = lga_actions.quote_prompt(),
-					["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+					["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob=**/" }),
 					["<C-w>"] = lga_actions.quote_prompt({ postfix = " -w " }),
 				},
 			},
 		},
 		frecency = {
 			workspaces = {
+				-- backend
 				["rails_controller"] = "./app/controllers",
 				["rails_model"] = "./app/models",
 				["rails_service"] = "./app/services",
@@ -57,11 +60,13 @@ telescope.setup({
 				["rails_view"] = "./app/views",
 				["rails_view_partials"] = "./app/views/api/partials",
 				["rails_spec"] = "./spec",
+				-- frontend
 				["next_page"] = "./src/pages",
 				["next_container"] = "./src/containers",
 				["next_component"] = "./src/components",
 				["next_model"] = "./src/models",
 				["next_util"] = "./src/utils",
+				["next_api"] = "./src/utils/api",
 			},
 		},
 	},
@@ -87,6 +92,7 @@ function _M.setup_project_keymaps()
 		keymap.set("n", "<leader>cm", string.format(frecency_str, "next_component"), frecency_opt)
 		keymap.set("n", "<leader>mo", string.format(frecency_str, "next_model"), frecency_opt)
 		keymap.set("n", "<leader>ut", string.format(frecency_str, "next_util"), frecency_opt)
+		keymap.set("n", "<leader>ap", string.format(frecency_str, "next_api"), frecency_opt)
 	else
 		-- backend frecency mappings
 		keymap.set("n", "<leader>co", string.format(frecency_str, "rails_controller"), frecency_opt)

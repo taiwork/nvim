@@ -13,6 +13,12 @@ saga.setup({
 			edit = "<CR>",
 		},
 	},
+	finder = {
+		max_height = 0.6,
+		left_width = 0.5,
+		right_width = 2,
+		keys = { shuttle = { "<C-h>", "<C-l>" } },
+	},
 	ui = {
 		colors = {
 			normal_bg = "#022746",

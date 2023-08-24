@@ -39,3 +39,5 @@ opt.iskeyword:append("-")
 
 -- swap file
 opt.swapfile = false
+
+vim.g.markdown_recommended_style = 0
