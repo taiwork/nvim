@@ -83,6 +83,9 @@ keymap.set("n", "<leader>av", ":AV<CR>") -- open alternate file in vertical spli
 -- copilot
 keymap.set("n", "<leader>cp", ":Copilot panel<CR>") -- open copilot panel
 
+-- github permlink
+keymap.set("n", "<leader>bp", ":GetCurrentBranchLink<CR>") -- open github permalink
+
 ----------------------
 -- Script Keybinds
 ----------------------
