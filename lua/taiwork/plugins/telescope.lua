@@ -37,6 +37,27 @@ telescope.setup({
 				["<C-c>"] = actions.close, -- close telescope
 			},
 		},
+		file_ignore_patterns = {
+			"node_modules",
+			"vendor",
+			"dist",
+			"build",
+			"public",
+			"tmp",
+			"log",
+			"logs",
+			"coverage",
+			"node_modules",
+			"vendor",
+			"dist",
+			"build",
+			"public",
+			"tmp",
+			"log",
+			"logs",
+			"coverage",
+			".git",
+		},
 	},
 	extensions = {
 		live_grep_args = {
