@@ -208,6 +208,9 @@ return packer.startup(function(use)
 	-- github permlink
 	use("knsh14/vim-github-link")
 
+	-- smooth scroll
+	use("karb94/neoscroll.nvim")
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

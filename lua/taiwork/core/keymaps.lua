@@ -86,6 +86,9 @@ keymap.set("n", "<leader>cp", ":Copilot panel<CR>") -- open copilot panel
 -- github permlink
 keymap.set("n", "<leader>bp", ":GetCurrentBranchLink<CR>") -- open github permalink
 
+-- copy current line
+keymap.set("n", "<leader>y", "0wv$hy") -- copy current line
+
 ----------------------
 -- Script Keybinds
 ----------------------
