@@ -94,7 +94,7 @@ keymap.set("n", "<leader>y", "0wv$hy") -- copy current line
 ----------------------
 
 -- copy relative file path
-local copy_file_path = require("taiwork.scripts.copy_file_path")
+local copy_file_path = require("scripts.copy_file_path")
 vim.keymap.set("n", "<leader>cf", copy_file_path.copy_relative_file_path, { silent = true, noremap = true })
 
 -- キーマッピング: <leader><C-O> で前のバッファにジャンプ
@@ -102,12 +102,12 @@ vim.keymap.set("n", "<leader>cf", copy_file_path.copy_relative_file_path, { sile
 -- vim.keymap.set(
 -- 	"n",
 -- 	"<leader><C-o>",
--- 	"<cmd>lua require('taiwork.scripts.jump_to_next_buffer').jump_to_next_buffer_in_jumplist(-1)<CR>",
+-- 	"<cmd>lua require('scripts.jump_to_next_buffer').jump_to_next_buffer_in_jumplist(-1)<CR>",
 -- 	{ silent = true, noremap = true }
 -- )
 -- vim.keymap.set(
 -- 	"n",
 -- 	"<leader><C-i>",
--- 	"<cmd>lua require('taiwork.scripts.jump_to_next_buffer').jump_to_next_buffer_in_jumplist(1)<CR>",
+-- 	"<cmd>lua require('scripts.jump_to_next_buffer').jump_to_next_buffer_in_jumplist(1)<CR>",
 -- 	{ silent = true, noremap = true }
 -- )
