@@ -24,7 +24,7 @@ telescope.setup({
 			"--column",
 			"--smart-case",
 			"--hidden", -- このオプションを追加
-			"--glob=!**/.git/**", -- .git ディレクトリを除外
+			-- "--glob=.git/**", -- .git ディレクトリを除外
 		},
 		-- find_command = { "fd", "--type", "f", "--hidden", "--exclude", ".git" },
 		mappings = {
@@ -38,25 +38,16 @@ telescope.setup({
 			},
 		},
 		file_ignore_patterns = {
-			"node_modules",
-			"vendor",
-			"dist",
-			"build",
-			"public",
-			"tmp",
-			"log",
-			"logs",
-			"coverage",
-			"node_modules",
-			"vendor",
-			"dist",
-			"build",
-			"public",
-			"tmp",
-			"log",
-			"logs",
-			"coverage",
-			".git",
+			-- "node_modules",
+			-- "vendor",
+			-- "dist",
+			-- "build",
+			-- "public",
+			-- "tmp",
+			-- "log",
+			-- "logs",
+			-- "coverage",
+			".git/",
 		},
 	},
 	extensions = {
@@ -66,7 +57,7 @@ telescope.setup({
 			mappings = { -- extend mappings
 				i = {
 					["<C-l>"] = lga_actions.quote_prompt(),
-					["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob=**/" }),
+					["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob=**/app/**" }),
 					["<C-w>"] = lga_actions.quote_prompt({ postfix = " -w " }),
 				},
 			},
