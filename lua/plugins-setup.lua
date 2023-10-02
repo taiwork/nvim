@@ -39,19 +39,16 @@ require("lazy").setup({
 	"nvim-lualine/lualine.nvim",
 
 	-- fuzzy finding w/ telescope
-	-- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, -- dependency for better sorting performance
+	{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, -- dependency for better sorting performance
+	{
+		"nvim-telescope/telescope-frecency.nvim",
+		dependencies = { "kkharji/sqlite.lua" },
+	},
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
 			{ "nvim-telescope/telescope-live-grep-args.nvim" },
 		},
-	},
-	{
-		"nvim-telescope/telescope-frecency.nvim",
-		config = function()
-			require("telescope").load_extension("frecency")
-		end,
-		dependencies = { "kkharji/sqlite.lua" },
 	},
 
 	-- autocompletion
