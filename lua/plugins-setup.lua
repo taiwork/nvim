@@ -161,6 +161,7 @@ require("lazy").setup({
 	-- ctags & rails
 	"vim-ruby/vim-ruby",
 	"tpope/vim-rails",
+	"thoughtbot/vim-rspec",
 	"AndrewRadev/rails_extra.vim",
 	"tpope/vim-rbenv",
 	"tpope/vim-bundler",

@@ -50,6 +50,7 @@
   "vim-nightfly-guicolors": { "branch": "master", "commit": "3d2510903a62df77662c843d105a81e0739cde02" },
   "vim-rails": { "branch": "master", "commit": "1ad9663ce31e8c08134849d04184cda94bb42aba" },
   "vim-rbenv": { "branch": "master", "commit": "2961648bcd772b0dc115ff5b5100f7d15b8c499f" },
+  "vim-rspec": { "branch": "main", "commit": "52a72592b6128f4ef1557bc6e2e3eb014d8b2d38" },
   "vim-ruby": { "branch": "master", "commit": "88f29671b776fff56e5ee554becf34dd2ee1975c" },
   "vim-surround": { "branch": "master", "commit": "3d188ed2113431cf8dac77be61b842acb64433d9" },
   "vim-tmux-navigator": { "branch": "master", "commit": "7db70e08ea03b3e4d91f63713d76134512e28d7e" },
