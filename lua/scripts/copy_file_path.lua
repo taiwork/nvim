@@ -5,7 +5,7 @@ function M.copy_relative_file_path()
 	local git_path = vim.fn.system("git rev-parse --show-toplevel")
 
 	local relative_file_path = "/" .. string.sub(absolute_file_path, git_path:len() + 1)
-	local copy_command = "echo " .. '".' .. relative_file_path .. '"' .. " | pbcopy"
+	local copy_command = "echo " .. '".' .. relative_file_path .. '"' .. " | tr -d '\n' | sed -e 's|\\./||' | pbcopy"
 	vim.fn.system(copy_command)
 	print(relative_file_path)
 	print("command:" .. copy_command)
