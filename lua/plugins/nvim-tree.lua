@@ -32,6 +32,9 @@ nvimtree.setup({
 			},
 		},
 	},
+	git = {
+		enable = false,
+	},
 })
 
 -- for auto-session workarounds
