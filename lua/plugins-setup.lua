@@ -152,7 +152,7 @@ require("lazy").setup({
 	},
 
 	-- git diff
-	"airblade/vim-gitgutter",
+	-- "airblade/vim-gitgutter", -- conflict octo.nvim
 	"tpope/vim-fugitive",
 
 	-- ctags & rails
@@ -190,4 +190,17 @@ require("lazy").setup({
 
 	-- smooth scroll
 	"karb94/neoscroll.nvim",
+
+	-- github review
+	{
+		"pwntester/octo.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("octo").setup()
+		end,
+	},
 })

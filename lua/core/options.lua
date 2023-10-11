@@ -41,3 +41,6 @@ opt.iskeyword:append("-")
 opt.swapfile = false
 
 vim.g.markdown_recommended_style = 0
+
+-- https://github.com/nvim-treesitter/nvim-treesitter/issues/2825#issuecomment-1496747076
+vim.g.indentLine_fileTypeExclude = { "json", "markdown" }
