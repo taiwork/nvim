@@ -106,7 +106,7 @@ require("lazy").setup({
 
 	-- session
 	{ "rmagatti/auto-session" },
-	{ "ToruIwashita/git-switcher.vim" },
+	-- { "ToruIwashita/git-switcher.vim" },
 
 	-- copilot
 	"github/copilot.vim",
