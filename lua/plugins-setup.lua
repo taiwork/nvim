@@ -16,7 +16,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	"nvim-lua/plenary.nvim", -- lua functions that many plugins use
 
-	"bluz71/vim-nightfly-guicolors", -- preferred colorscheme
+	-- "bluz71/vim-nightfly-guicolors", -- preferred colorscheme
+	{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 
 	"christoomey/vim-tmux-navigator", -- tmux & split window navigation
 
