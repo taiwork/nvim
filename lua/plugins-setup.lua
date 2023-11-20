@@ -204,4 +204,7 @@ require("lazy").setup({
 			require("octo").setup()
 		end,
 	},
+
+	-- translate
+	"uga-rosa/translate.nvim",
 })

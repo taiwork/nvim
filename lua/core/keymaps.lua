@@ -18,7 +18,7 @@ keymap.set("n", "<leader>-", "<C-x>")
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v") -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
-keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
+keymap.set("n", "<leader>sq", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
@@ -88,6 +88,10 @@ keymap.set("n", "<leader>bp", ":GetCurrentBranchLink<CR>") -- open github permal
 
 -- copy current line
 keymap.set("n", "<leader>y", "0wv$hy") -- copy current line
+
+-- translate
+keymap.set("v", "<leader>tre", ":Translate EN -output=replace<CR>") -- translate word
+keymap.set("v", "<leader>trj", ":Translate JA -output=replace<CR>") -- translate word
 
 ----------------------
 -- Script Keybinds

@@ -14,7 +14,7 @@ catppuccin.setup({
 			-- CmpBorder = { fg = colors.pink },
 			-- Pmenu = { bg = colors.pink },
 			-- HlSearch = { bg = colors.pink },
-			Search = { bg = mocha.pink, fg = mocha.crust },
+			-- Search = { bg = mocha.pink, fg = mocha.crust },
 		}
 	end,
 })
