@@ -93,6 +93,16 @@ keymap.set("n", "<leader>y", "0wv$hy") -- copy current line
 keymap.set("v", "<leader>tre", ":Translate EN -output=replace<CR>") -- translate word
 keymap.set("v", "<leader>trj", ":Translate JA -output=replace<CR>") -- translate word
 
+-- Octo
+keymap.set("n", "<leader>opl", ":Octo pr list<CR>") -- open pull request list
+keymap.set("n", "<leader>opc", ":Octo pr create<CR>") -- open pull request create
+keymap.set("n", "<leader>opm", ":Octo pr merge<CR>") -- open pull request merge
+keymap.set("n", "<leader>opb", ":Octo pr browser<CR>") -- open pull request browser
+keymap.set("n", "<leader>orst", ":Octo review start<CR>") -- open pull request review start
+keymap.set("n", "<leader>orsu", ":Octo review submit<CR>") -- open pull request review submit
+keymap.set("n", "<leader>orr", ":Octo review resume<CR>") -- open pull request review resume
+keymap.set("n", "<leader>ord", ":Octo review discard<CR>") -- open pull request review discard
+
 ----------------------
 -- Script Keybinds
 ----------------------
