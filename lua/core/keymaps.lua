@@ -21,10 +21,15 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>sq", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
-keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
+-- keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
+keymap.set("n", "<leader>to", ":tabonly<CR>") -- close all other tabs
+
+-- move tab
+keymap.set("n", "}", "gt") -- move to next tab
+keymap.set("n", "{", "gT") -- move to previous tab
 
 ----------------------
 -- Plugin Keybinds
@@ -98,8 +103,8 @@ keymap.set("n", "<leader>opl", ":Octo pr list<CR>") -- open pull request list
 keymap.set("n", "<leader>opc", ":Octo pr create<CR>") -- open pull request create
 keymap.set("n", "<leader>opm", ":Octo pr merge<CR>") -- open pull request merge
 keymap.set("n", "<leader>opb", ":Octo pr browser<CR>") -- open pull request browser
-keymap.set("n", "<leader>orst", ":Octo review start<CR>") -- open pull request review start
-keymap.set("n", "<leader>orsu", ":Octo review submit<CR>") -- open pull request review submit
+keymap.set("n", "<leader>ors", ":Octo review start<CR>") -- open pull request review start
+keymap.set("n", "<leader>oru", ":Octo review submit<CR>") -- open pull request review submit
 keymap.set("n", "<leader>orr", ":Octo review resume<CR>") -- open pull request review resume
 keymap.set("n", "<leader>ord", ":Octo review discard<CR>") -- open pull request review discard
 
