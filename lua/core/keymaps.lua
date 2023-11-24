@@ -103,6 +103,7 @@ keymap.set("n", "<leader>opl", ":Octo pr list<CR>") -- open pull request list
 keymap.set("n", "<leader>opc", ":Octo pr create<CR>") -- open pull request create
 keymap.set("n", "<leader>opm", ":Octo pr merge<CR>") -- open pull request merge
 keymap.set("n", "<leader>opb", ":Octo pr browser<CR>") -- open pull request browser
+keymap.set("n", "<leader>opu", ":Octo pr url<CR>") -- open pull request url
 keymap.set("n", "<leader>ors", ":Octo review start<CR>") -- open pull request review start
 keymap.set("n", "<leader>oru", ":Octo review submit<CR>") -- open pull request review submit
 keymap.set("n", "<leader>orr", ":Octo review resume<CR>") -- open pull request review resume
