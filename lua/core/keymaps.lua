@@ -69,15 +69,20 @@ keymap.set("n", "<leader>gb", ":Git blame<CR>") -- open git blame in split windo
 
 -- diffview
 keymap.set("n", "<leader>dh", ":DiffviewOpen HEAD<CR>") -- open HEAD diffview
-keymap.set("n", "<leader>dm", ":DiffviewOpen master<CR>") -- open master diffview
+keymap.set("n", "<leader>dm", ":DiffviewOpen origin/HEAD...HEAD --imply-local<CR>") -- open master diffview
+keymap.set("n", "<leader>df", ":DiffviewFileHistory --range=origin/HEAD...HEAD --right-only --no-merges<CR>") -- open file history diffview
 keymap.set("n", "<leader>do", ":DiffviewOpen ") -- open diffview
 keymap.set("n", "<leader>dc", ":DiffviewClose<CR>") -- close diffview
 keymap.set("n", "<leader>dr", ":DiffviewRefresh<CR>") -- refresh diffview
 
 -- git-switcher
-keymap.set("n", "<leader>gs", ":Gsw ") -- open git switcher
-keymap.set("n", "<leader>gl", ":GswLoad<CR>") -- load session in now session
-keymap.set("n", "<leader>gp", ":GswSave<CR>") -- save current session
+-- keymap.set("n", "<leader>gs", ":Gsw ") -- open git switcher
+-- keymap.set("n", "<leader>gl", ":GswLoad<CR>") -- load session in now session
+-- keymap.set("n", "<leader>gp", ":GswSave<CR>") -- save current session
+
+-- auto-session
+keymap.set("n", "<leader>ss", ":SessionSave<CR>") -- save session
+keymap.set("n", "<leader>sd", ":SessionDelete<CR>") -- delete session
 
 -- vim-rails
 keymap.set("n", "<leader>rr", ":R<CR>") -- open rails model, controller, view, etc.
@@ -87,9 +92,6 @@ keymap.set("n", "<leader>av", ":AV<CR>") -- open alternate file in vertical spli
 
 -- copilot
 keymap.set("n", "<leader>cp", ":Copilot panel<CR>") -- open copilot panel
-
--- github permlink
-keymap.set("n", "<leader>bp", ":GetCurrentBranchLink<CR>") -- open github permalink
 
 -- copy current line
 keymap.set("n", "<leader>y", "0wv$hy") -- copy current line

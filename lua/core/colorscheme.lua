@@ -6,6 +6,19 @@ end
 
 local mocha = require("catppuccin.palettes").get_palette("mocha")
 catppuccin.setup({
+	integrations = {
+		cmp = true,
+		gitsigns = true,
+		nvimtree = true,
+		treesitter = true,
+		notify = false,
+		mini = {
+			enabled = true,
+			indentscope_color = "",
+		},
+		octo = true,
+		telescope = true,
+	},
 	transparent_background = true,
 	custom_highlights = function()
 		return {

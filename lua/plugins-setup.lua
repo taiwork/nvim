@@ -186,9 +186,6 @@ require("lazy").setup({
 	-- multiple cursors
 	"mg979/vim-visual-multi",
 
-	-- github permlink
-	"knsh14/vim-github-link",
-
 	-- smooth scroll
 	"karb94/neoscroll.nvim",
 
@@ -207,4 +204,8 @@ require("lazy").setup({
 
 	-- translate
 	"uga-rosa/translate.nvim",
+
+	-- gitlinker (permlink)
+	"ruifm/gitlinker.nvim",
+	requires = "nvim-lua/plenary.nvim",
 })
