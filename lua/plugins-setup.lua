@@ -208,4 +208,7 @@ require("lazy").setup({
 	-- gitlinker (permlink)
 	"ruifm/gitlinker.nvim",
 	requires = "nvim-lua/plenary.nvim",
+
+	-- nest context preview
+	"nvim-treesitter/nvim-treesitter-context",
 })
