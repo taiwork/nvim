@@ -20,14 +20,15 @@ catppuccin.setup({
 		telescope = true,
 	},
 	transparent_background = true,
-	custom_highlights = function()
+	custom_highlights = function(colors)
 		return {
 			-- Comment = { fg = colors.pink },
 			-- TabLineSel = { bg = colors.pink },
 			-- CmpBorder = { fg = colors.pink },
 			-- Pmenu = { bg = colors.pink },
-			-- HlSearch = { bg = colors.pink },
-			-- Search = { bg = mocha.pink, fg = mocha.crust },
+			CusorText = { bg = colors.pink, fg = colors.none },
+			HlSearch = { bg = mocha.semantic_red, fg = colors.none },
+			Search = { bg = mocha.semantic_red, fg = colors.none },
 		}
 	end,
 })
