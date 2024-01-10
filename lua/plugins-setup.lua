@@ -58,7 +58,7 @@ require("lazy").setup({
 	"hrsh7th/cmp-path", -- source for file system paths
 
 	-- snippets
-	"L3MON4D3/LuaSnip", -- snippet engine
+	-- "L3MON4D3/LuaSnip", -- snippet engine
 	"saadparwaiz1/cmp_luasnip", -- for autocompletion
 	"rafamadriz/friendly-snippets", -- useful snippets
 
