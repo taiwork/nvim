@@ -11,6 +11,9 @@ keymap.set("n", "<leader>nh", ":nohl<CR>")
 -- delete single character without copying into register
 keymap.set("n", "x", '"_x')
 
+-- replace single character without copying into register
+keymap.set("x", "p", "pgvy")
+
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>")
 keymap.set("n", "<leader>-", "<C-x>")
@@ -23,8 +26,9 @@ keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
 -- keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
-keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
-keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
+keymap.set("n", "<leader>tn", ":tabnew<CR>") -- open new tab
+-- keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
+-- keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 keymap.set("n", "<leader>to", ":tabonly<CR>") -- close all other tabs
 
 -- move tab
@@ -114,13 +118,18 @@ keymap.set("n", "<leader>ord", ":Octo review discard<CR>") -- open pull request 
 keymap.set("n", "]q", ":cnext<CR>") -- go to next quickfix item
 keymap.set("n", "[q", ":cprev<CR>") -- go to previous quickfix item
 
+keymap.set("n", "n", "nzz") -- center screen after n
+keymap.set("n", "N", "Nzz") -- center screen after N
+
 ----------------------
 -- Script Keybinds
 ----------------------
 
 -- copy relative file path
 local copy_file_path = require("scripts.copy_file_path")
-vim.keymap.set("n", "<leader>cf", copy_file_path.copy_relative_file_path, { silent = true, noremap = true })
+keymap.set("n", "<leader>cf", copy_file_path.copy_relative_file_path, { silent = true, noremap = true })
+
+keymap.set("n", "<leader>dr", ":DockerRspec<CR>") -- run rspec in docker
 
 -- キーマッピング: <leader><C-O> で前のバッファにジャンプ
 -- キーマッピング: <leader><C-I> で次のバッファにジャンプ

@@ -211,4 +211,7 @@ require("lazy").setup({
 
 	-- nest context preview
 	"nvim-treesitter/nvim-treesitter-context",
+
+	-- quickfix
+	"kevinhwang91/nvim-bqf",
 })

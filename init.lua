@@ -6,6 +6,8 @@ require("core.commands")
 require("core.keymaps")
 require("core.options")
 
+require("scripts.docker_rspec")
+
 require("plugins.comment")
 require("plugins.nvim-tree")
 require("plugins.lualine")
@@ -31,3 +33,4 @@ require("plugins.git-switcher")
 require("plugins.neoscroll")
 require("plugins.gitlinker")
 require("plugins.nvim-treesitter-context")
+require("plugins.nvim-bqf")
