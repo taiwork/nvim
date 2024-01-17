@@ -81,8 +81,8 @@ keymap.set("n", "<leader>dr", ":DiffviewRefresh<CR>") -- refresh diffview
 
 -- git-switcher
 -- keymap.set("n", "<leader>gs", ":Gsw ") -- open git switcher
--- keymap.set("n", "<leader>gl", ":GswLoad<CR>") -- load session in now session
--- keymap.set("n", "<leader>gp", ":GswSave<CR>") -- save current session
+keymap.set("n", "<leader>gl", ":GswLoad<CR>") -- load session in now session
+keymap.set("n", "<leader>gs", ":GswSave<CR>") -- save current session
 
 -- auto-session
 keymap.set("n", "<leader>ss", ":SessionSave<CR>") -- save session
@@ -91,8 +91,10 @@ keymap.set("n", "<leader>sd", ":SessionDelete<CR>") -- delete session
 -- vim-rails
 keymap.set("n", "<leader>rr", ":R<CR>") -- open rails model, controller, view, etc.
 keymap.set("n", "<leader>rv", ":RV<CR>") -- open rails model, controller, view, etc. in vertical split
+keymap.set("n", "<leader>rh", ":RS<CR>") -- open rails model, controller, view, etc. in horizontal split
 keymap.set("n", "<leader>aa", ":A<CR>") -- open alternate file (model, controller, view, etc.)
 keymap.set("n", "<leader>av", ":AV<CR>") -- open alternate file in vertical split
+keymap.set("n", "<leader>ah", ":AS<CR>") -- open alternate file in horizontal split
 
 -- copilot
 keymap.set("n", "<leader>cp", ":Copilot panel<CR>") -- open copilot panel
