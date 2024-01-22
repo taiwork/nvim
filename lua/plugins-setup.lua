@@ -160,7 +160,7 @@ require("lazy").setup({
 	"vim-ruby/vim-ruby",
 	"tpope/vim-rails",
 	"thoughtbot/vim-rspec",
-	-- "AndrewRadev/rails_extra.vim",
+	"AndrewRadev/rails_extra.vim",
 	"tpope/vim-rbenv",
 	"tpope/vim-bundler",
 

@@ -117,8 +117,8 @@ keymap.set("n", "<leader>oru", ":Octo review submit<CR>") -- open pull request r
 keymap.set("n", "<leader>orr", ":Octo review resume<CR>") -- open pull request review resume
 keymap.set("n", "<leader>ord", ":Octo review discard<CR>") -- open pull request review discard
 
-keymap.set("n", "]q", ":cnext<CR>") -- go to next quickfix item
-keymap.set("n", "[q", ":cprev<CR>") -- go to previous quickfix item
+keymap.set("n", "]q", ":cnext<CR>zz") -- go to next quickfix item
+keymap.set("n", "[q", ":cprev<CR>zz") -- go to previous quickfix item
 
 keymap.set("n", "n", "nzz") -- center screen after n
 keymap.set("n", "N", "Nzz") -- center screen after N
