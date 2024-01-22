@@ -24,4 +24,7 @@ saga.setup({
 			normal_bg = "#022746",
 		},
 	},
+	rename = {
+		auto_save = true,
+	},
 })
