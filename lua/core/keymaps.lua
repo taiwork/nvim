@@ -122,6 +122,10 @@ keymap.set("n", "[q", ":cprev<CR>zz") -- go to previous quickfix item
 
 keymap.set("n", "n", "nzz") -- center screen after n
 keymap.set("n", "N", "Nzz") -- center screen after N
+keymap.set("n", "*", "*zz") -- center screen after *
+
+keymap.set("n", "<C-i>", "<C-i>zz") -- center screen after <C-i>
+keymap.set("n", "<C-o>", "<C-o>zz") -- center screen after <C-o>
 
 ----------------------
 -- Script Keybinds

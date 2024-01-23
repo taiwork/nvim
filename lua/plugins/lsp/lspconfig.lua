@@ -44,7 +44,8 @@ local on_attach = function(client, bufnr)
 		keymap.set("n", "<leader>ru", ":TypescriptRemoveUnused<CR>") -- remove unused variables (not in youtube nvim video)
 	end
 	if client.name == "solargraph" then
-		keymap.set("n", "<C-]>", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) -- go to definition
+		-- keymap.set("n", "<C-]>", "bve<cmd>lua vim.lsp.buf.definition()<CR>", opts) -- go to definition
+		keymap.set("n", "<C-]>", "viw<C-]>") -- go to definition
 	end
 end
 
