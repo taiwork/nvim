@@ -137,6 +137,7 @@ keymap.set("n", "<leader>cf", copy_file_path.copy_relative_file_path, { silent =
 
 keymap.set("n", "<leader>dr", ":DockerRspec<CR>") -- run rspec in docker
 
+keymap.set("n", "<C-]>", "viw<C-]>") -- go to definition
 -- キーマッピング: <leader><C-O> で前のバッファにジャンプ
 -- キーマッピング: <leader><C-I> で次のバッファにジャンプ
 -- vim.keymap.set(

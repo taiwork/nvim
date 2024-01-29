@@ -214,4 +214,6 @@ require("lazy").setup({
 
 	-- quickfix
 	"kevinhwang91/nvim-bqf",
+
+	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 })
