@@ -127,6 +127,8 @@ keymap.set("n", "*", "*zz") -- center screen after *
 keymap.set("n", "<C-i>", "<C-i>zz") -- center screen after <C-i>
 keymap.set("n", "<C-o>", "<C-o>zz") -- center screen after <C-o>
 
+keymap.set("n", "<leader>fm", ":setl foldmethod=marker<CR>:setl foldmarker=<details>,</details><CR>") -- set fold method to marker
+
 ----------------------
 -- Script Keybinds
 ----------------------

@@ -27,8 +27,7 @@ catppuccin.setup({
 			-- CmpBorder = { fg = colors.pink },
 			-- Pmenu = { bg = colors.pink },
 			CusorText = { bg = colors.pink, fg = colors.none },
-			HlSearch = { bg = mocha.semantic_red, fg = colors.none },
-			Search = { bg = mocha.semantic_red, fg = colors.none },
+			Search = { bg = colors.surface2, fg = colors.none },
 		}
 	end,
 })
