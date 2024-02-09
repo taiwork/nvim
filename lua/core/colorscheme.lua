@@ -22,10 +22,6 @@ catppuccin.setup({
 	transparent_background = true,
 	custom_highlights = function(colors)
 		return {
-			-- Comment = { fg = colors.pink },
-			-- TabLineSel = { bg = colors.pink },
-			-- CmpBorder = { fg = colors.pink },
-			-- Pmenu = { bg = colors.pink },
 			CusorText = { bg = colors.pink, fg = colors.none },
 			Search = { bg = colors.surface2, fg = colors.none },
 		}

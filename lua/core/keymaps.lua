@@ -100,7 +100,7 @@ keymap.set("n", "<leader>ah", ":AS<CR>") -- open alternate file in horizontal sp
 keymap.set("n", "<leader>cp", ":Copilot panel<CR>") -- open copilot panel
 
 -- copy current line
-keymap.set("n", "<leader>y", "0wv$hy") -- copy current line
+keymap.set("n", "<leader>y", "^v$hy") -- copy current line
 
 -- translate
 keymap.set("v", "<leader>tre", ":Translate EN -output=replace<CR>") -- translate word
