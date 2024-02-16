@@ -216,4 +216,13 @@ require("lazy").setup({
 	"kevinhwang91/nvim-bqf",
 
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+
+	{
+		"vidocqh/data-viewer.nvim",
+		opts = {},
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"kkharji/sqlite.lua", -- Optional, sqlite support
+		},
+	},
 })

@@ -129,6 +129,12 @@ keymap.set("n", "<C-o>", "<C-o>zz") -- center screen after <C-o>
 
 keymap.set("n", "<leader>fm", ":setl foldmethod=marker<CR>:setl foldmarker=<details>,</details><CR>") -- set fold method to marker
 
+keymap.set("n", "<leader>zl", "zL") -- scroll half screen to the right
+keymap.set("n", "<leader>zh", "zH") -- scroll half screen to the left
+
+keymap.set("n", "<leader>vo", ":DataViewer<CR>") -- open data viewer
+keymap.set("n", "<leader>vc", ":DataViewerClose<CR>") -- close data viewer
+
 ----------------------
 -- Script Keybinds
 ----------------------

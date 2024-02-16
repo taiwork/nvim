@@ -22,8 +22,7 @@ catppuccin.setup({
 	transparent_background = true,
 	custom_highlights = function(colors)
 		return {
-			CusorText = { bg = colors.pink, fg = colors.none },
-			Search = { bg = colors.surface2, fg = colors.none },
+			Search = { bg = colors.overlay0, fg = colors.none },
 		}
 	end,
 })
