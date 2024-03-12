@@ -215,8 +215,10 @@ require("lazy").setup({
 	-- quickfix
 	"kevinhwang91/nvim-bqf",
 
+	-- indent blankline
 	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
+	-- csv data viewer
 	{
 		"vidocqh/data-viewer.nvim",
 		opts = {},
@@ -224,5 +226,20 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim",
 			"kkharji/sqlite.lua", -- Optional, sqlite support
 		},
+	},
+
+	-- github copilot chat
+	{
+		"CopilotC-Nvim/CopilotChat.nvim",
+		branch = "canary",
+		dependencies = {
+			{ "zbirenbaum/copilot.vim" }, -- or github/copilot.vim
+			{ "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+		},
+		opts = {
+			debug = false, -- Enable debugging
+			-- See Configuration section for rest
+		},
+		-- See Commands section for default commands if you want to lazy load on them
 	},
 })
