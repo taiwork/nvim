@@ -11,6 +11,9 @@ vim.g.loaded_netrwPlugin = 1
 vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 
 nvimtree.setup({
+	view = {
+		width = 40,
+	},
 	-- change folder arrow icons
 	renderer = {
 		indent_width = 1,
