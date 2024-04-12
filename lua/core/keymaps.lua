@@ -35,6 +35,9 @@ keymap.set("n", "<leader>to", ":tabonly<CR>") -- close all other tabs
 keymap.set("n", "}", "gt") -- move to next tab
 keymap.set("n", "{", "gT") -- move to previous tab
 
+-- visual $ without newline
+keymap.set("v", "$", "$h")
+
 ----------------------
 -- Plugin Keybinds
 ----------------------
