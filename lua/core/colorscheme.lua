@@ -22,7 +22,7 @@ catppuccin.setup({
 	transparent_background = true,
 	custom_highlights = function(colors)
 		return {
-			Search = { bg = colors.overlay0, fg = colors.none },
+			Search = { bg = colors.frappe_overlay0, fg = colors.none },
 		}
 	end,
 })
