@@ -4,7 +4,11 @@ if not catppuccin_setup then
 	return
 end
 
+local latte = require("catppuccin.palettes").get_palette("latte")
+local frappe = require("catppuccin.palettes").get_palette("frappe")
+local macchiato = require("catppuccin.palettes").get_palette("macchiato")
 local mocha = require("catppuccin.palettes").get_palette("mocha")
+
 catppuccin.setup({
 	integrations = {
 		cmp = true,
@@ -22,7 +26,7 @@ catppuccin.setup({
 	transparent_background = true,
 	custom_highlights = function(colors)
 		return {
-			Search = { bg = colors.frappe_overlay0, fg = colors.none },
+			Search = { bg = colors.frappe_semantic_red, fg = colors.none },
 		}
 	end,
 })
