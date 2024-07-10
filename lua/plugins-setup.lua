@@ -107,7 +107,7 @@ require("lazy").setup({
 
 	-- session
 	{ "rmagatti/auto-session" },
-	{ "ToruIwashita/git-switcher.vim" },
+	-- { "ToruIwashita/git-switcher.vim" },
 
 	-- copilot
 	"github/copilot.vim",
@@ -190,17 +190,17 @@ require("lazy").setup({
 	"karb94/neoscroll.nvim",
 
 	-- github review
-	{
-		"pwntester/octo.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-			"nvim-tree/nvim-web-devicons",
-		},
-		config = function()
-			require("octo").setup()
-		end,
-	},
+	-- {
+	-- 	"pwntester/octo.nvim",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 	},
+	-- 	config = function()
+	-- 		require("octo").setup()
+	-- 	end,
+	-- },
 
 	-- translate
 	"uga-rosa/translate.nvim",
