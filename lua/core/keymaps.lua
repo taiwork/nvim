@@ -138,6 +138,10 @@ keymap.set("n", "<leader>zh", "zH") -- scroll half screen to the left
 keymap.set("n", "<leader>vo", ":DataViewer<CR>") -- open data viewer
 keymap.set("n", "<leader>vc", ":DataViewerClose<CR>") -- close data viewer
 
+-- 'p' キーをオーバーライドして、ペースト後に改行文字を削除(WSLでwindows側の文字をコピペすると起きる現象に対処)
+keymap.set("n", "p", "p:RemoveCR<CR>", { noremap = true, silent = true })
+keymap.set("n", "P", "P:RemoveCR<CR>", { noremap = true, silent = true })
+
 ----------------------
 -- Script Keybinds
 ----------------------

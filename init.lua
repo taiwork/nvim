@@ -7,6 +7,8 @@ require("core.keymaps")
 require("core.options")
 
 require("scripts.docker_rspec")
+require("scripts.copy_error_messages")
+require("scripts.windows_cr_replace")
 
 require("plugins.comment")
 require("plugins.nvim-tree")
