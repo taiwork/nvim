@@ -35,6 +35,8 @@ treesitter.setup({
 		"gitignore",
 		"ruby",
 		"sql",
+		"vimdoc",
+		"luadoc",
 	},
 	-- auto install above language parsers
 	auto_install = true,
