@@ -142,6 +142,10 @@ keymap.set("n", "<leader>vc", ":DataViewerClose<CR>") -- close data viewer
 keymap.set("n", "p", "p:RemoveCR<CR>", { noremap = true, silent = true })
 keymap.set("n", "P", "P:RemoveCR<CR>", { noremap = true, silent = true })
 
+-- Visualモードでのペースト時に改行を削除
+keymap.set("v", "p", "p:RemoveCR<CR>", { noremap = true, silent = true })
+keymap.set("v", "P", "P:RemoveCR<CR>", { noremap = true, silent = true })
+
 ----------------------
 -- Script Keybinds
 ----------------------
@@ -153,6 +157,9 @@ keymap.set("n", "<leader>cf", copy_file_path.copy_relative_file_path, { silent =
 keymap.set("n", "<leader>dr", ":DockerRspec<CR>") -- run rspec in docker
 
 keymap.set("n", "<C-]>", "viw<C-]>") -- go to definition
+
+keymap.set("i", "<C-v>", "<C-r>+") -- TelescopeのインサートモードでCtrl+Vを押したときにクリップボードの内容を貼り付ける設定
+
 -- キーマッピング: <leader><C-O> で前のバッファにジャンプ
 -- キーマッピング: <leader><C-I> で次のバッファにジャンプ
 -- vim.keymap.set(

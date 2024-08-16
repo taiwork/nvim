@@ -35,6 +35,10 @@ telescope.setup({
 				["<C-]>"] = actions.cycle_history_next, -- cycle history next
 				["<C-[>"] = actions.cycle_history_prev, -- cycle history prev
 				["<C-c>"] = actions.close, -- close telescope
+				-- TelescopeのインサートモードでCtrl+Vを押したときにクリップボードの内容を貼り付ける設定
+				["<C-v>"] = function()
+					vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-r>+", true, true, true))
+				end,
 			},
 		},
 		file_ignore_patterns = {
