@@ -16,20 +16,43 @@ neoscroll.setup({
 	performance_mode = false, -- Disable "Performance Mode" on all buffers.
 })
 
-local t = {}
--- Syntax: t[keys] = {function, {function arguments}}
--- Use the "sine" easing function
-t["<C-u>"] = { "scroll", { "-vim.wo.scroll", "true", "350", [['sine']] } }
-t["<C-d>"] = { "scroll", { "vim.wo.scroll", "true", "350", [['sine']] } }
--- Use the "circular" easing function
-t["<C-b>"] = { "scroll", { "-vim.api.nvim_win_get_height(0)", "true", "500", [['circular']] } }
-t["<C-f>"] = { "scroll", { "vim.api.nvim_win_get_height(0)", "true", "500", [['circular']] } }
--- Pass "nil" to disable the easing animation (constant scrolling speed)
-t["<C-y>"] = { "scroll", { "-0.10", "false", "100", nil } }
-t["<C-e>"] = { "scroll", { "0.10", "false", "100", nil } }
--- When no easing function is provided the default easing function (in this case "quadratic") will be used
-t["zt"] = { "zt", { "300" } }
-t["zz"] = { "zz", { "300" } }
-t["zb"] = { "zb", { "300" } }
+-- キーマッピングのテーブルを作成
+local mappings = {
+	-- "sine"のイージング関数を使用
+	["<C-u>"] = function()
+		neoscroll.scroll(-vim.wo.scroll, true, 350, "sine")
+	end,
+	["<C-d>"] = function()
+		neoscroll.scroll(vim.wo.scroll, true, 350, "sine")
+	end,
+	-- "circular"のイージング関数を使用
+	["<C-b>"] = function()
+		neoscroll.scroll(-vim.api.nvim_win_get_height(0), true, 500, "circular")
+	end,
+	["<C-f>"] = function()
+		neoscroll.scroll(vim.api.nvim_win_get_height(0), true, 500, "circular")
+	end,
+	-- イージング関数を無効化
+	["<C-y>"] = function()
+		neoscroll.scroll(-0.10, false, 100)
+	end,
+	["<C-e>"] = function()
+		neoscroll.scroll(0.10, false, 100)
+	end,
+	-- デフォルトのイージング関数を使用
+	["zt"] = function()
+		neoscroll.zt(300)
+	end,
+	["zz"] = function()
+		neoscroll.zz(300)
+	end,
+	["zb"] = function()
+		neoscroll.zb(300)
+	end,
+}
 
-require("neoscroll.config").set_mappings(t)
+-- マッピングを設定
+local modes = { "n", "v", "x" }
+for k, v in pairs(mappings) do
+	vim.keymap.set(modes, k, v, { silent = true })
+end

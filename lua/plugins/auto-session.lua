@@ -1,6 +1,8 @@
 local setup, autosession = pcall(require, "auto-session")
 if not setup then
-  return
+	return
 end
 
-autosession.setup()
+autosession.setup({
+	silent_restore = false,
+})
