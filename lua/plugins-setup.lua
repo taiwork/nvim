@@ -210,7 +210,7 @@ require("lazy").setup({
 	requires = "nvim-lua/plenary.nvim",
 
 	-- nest context preview
-	"nvim-treesitter/nvim-treesitter-context",
+	-- "nvim-treesitter/nvim-treesitter-context",
 
 	-- quickfix
 	"kevinhwang91/nvim-bqf",
