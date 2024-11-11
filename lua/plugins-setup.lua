@@ -244,6 +244,9 @@ require("lazy").setup({
 			"rafamadriz/friendly-snippets",
 		},
 	},
+	{
+		"taiwork/vim-asterisk-nojump",
+	},
 
 	-- github copilot chat
 	-- {
