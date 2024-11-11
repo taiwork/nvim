@@ -4,9 +4,9 @@ local groupName = "DisableAutosaveForOcto"
 local groupID = vim.api.nvim_create_augroup(groupName, { clear = true })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "octo",
-	group = groupID,
-	callback = function()
-		vim.b.auto_save = 0
-	end,
+  pattern = "octo",
+  group = groupID,
+  callback = function()
+    vim.b.auto_save = 0
+  end,
 })
