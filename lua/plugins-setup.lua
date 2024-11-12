@@ -245,8 +245,8 @@ require("lazy").setup({
     },
   },
   {
-    "taiwork/vim-asterisk-nojump",
-  },
+    "taiwork/asterisk-nojump.nvim",
+  }
 
   -- github copilot chat
   -- {

@@ -7,26 +7,25 @@ function M.jump_to_next_buffer_in_jumplist(direction)
   local jumplist = jumplist_and_position[1]
   local current_jump_position = jumplist_and_position[2]
 
-  -- direction引数に基づいてジャンプコマンドとその文字表現を決定
-  local jump_command_string = direction > 0 and "<C-O>" or "<C-I>"
-  local jump_command_character = direction > 0 and "^O" or "^I"
-
   -- direction引数に基づいてジャンプリストの検索範囲を決定
-  local search_range = direction > 0 and vim.fn.range(current_jump_position + 1, #jumplist)
-    or vim.fn.range(current_jump_position - 1, 0, -1)
+  local search_range
+  if direction > 0 then
+    search_range = vim.fn.range(current_jump_position + 1, #jumplist)
+  else
+    search_range = vim.fn.range(current_jump_position - 1, 1, -1)
+  end
 
   -- 検索範囲内でループを開始
   for _, index in ipairs(search_range) do
     -- ジャンプリストの各エントリが現在のバッファと異なるバッファを指しているかを確認
-    if jumplist[index]["bufnr"] ~= vim.fn.bufnr("%") then
-      -- ジャンプする距離（回数）を計算
-      local jump_distance = (index - current_jump_position) * direction
+    if jumplist[index] and jumplist[index].bufnr ~= vim.fn.bufnr("%") then
+      -- ジャンプ先のバッファ番号と位置を取得
+      local jump_bufnr = jumplist[index].bufnr
+      local jump_lnum = jumplist[index].lnum
 
-      -- ジャンプコマンドとジャンプ回数を表示
-      print("Executing " .. jump_command_string .. " " .. jump_distance .. " times.")
-
-      -- 計算したジャンプ回数分、ジャンプコマンドを実行
-      vim.api.nvim_command("silent normal! " .. jump_distance .. jump_command_character)
+      -- ジャンプするバッファと行に移動
+      vim.api.nvim_set_current_buf(jump_bufnr)
+      vim.api.nvim_win_set_cursor(0, {jump_lnum, 0})
 
       -- 異なるバッファが見つかったのでループを終了
       break
