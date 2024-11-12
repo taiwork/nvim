@@ -23,6 +23,7 @@ require("plugins.treesitter")
 
 -- original
 require("plugins.copilot")
+require("plugins.neoscroll")
 require("plugins.cheatsheet")
 require("plugins.vim-auto-save")
 require("plugins.hop")
