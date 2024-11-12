@@ -103,17 +103,51 @@ require("lazy").setup({
   -- ## original
 
   -- autoSave
-  "907th/vim-auto-save",
+  {
+    "907th/vim-auto-save",
+    config = function()
+      vim.g.auto_save = 1
+      local groupName = "DisableAutosaveForOcto"
+      local groupID = vim.api.nvim_create_augroup(groupName, { clear = true })
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "octo",
+        group = groupID,
+        callback = function()
+          vim.b.auto_save = 0
+        end,
+      })
+    end,
+  },
 
   -- session
   { "rmagatti/auto-session", opts = { silent_restore = false } },
-  -- { "ToruIwashita/git-switcher.vim" },
+  -- {
+  --   "ToruIwashita/git-switcher.vim",
+  --   config = function()
+  --     vim.g.gsw_load_session_confirm = "yes"
+  --   end,
+  -- },
 
   -- copilot
-  "github/copilot.vim",
+  {
+    "github/copilot.vim",
+    config = function()
+      vim.g.copilot_filetypes = {
+        markdown = true,
+        gitcommit = true,
+        yaml = true,
+      }
+    end,
+  },
 
   -- cheatsheet
-  "reireias/vim-cheatsheet",
+  {
+    "reireias/vim-cheatsheet",
+    config = function()
+      vim.g["cheatsheet#cheat_file"] = "~/.config/nvim/cheatsheet.md"
+    end,
+  },
   {
     "folke/which-key.nvim",
     config = function()
@@ -188,11 +222,25 @@ require("lazy").setup({
     config = function()
       -- you can configure Hop the way you like here; see :h hop-config
       require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+      vim.keymap.set("", "f", require("hop").hint_char1, { remap = true })
+      vim.keymap.set("", "r", require("hop").hint_lines_skip_whitespace, { remap = true })
     end,
   },
 
   -- tagbar
-  "preservim/tagbar",
+  {
+    "preservim/tagbar",
+    config = function()
+      vim.g.tagbar_type_rspec = {
+        ctagstype = "RSpec",
+        kinds = {
+          "d:describe",
+          "c:context",
+          "i:it",
+        },
+      }
+    end,
+  },
 
   -- multiple cursors
   "mg979/vim-visual-multi",
@@ -217,11 +265,30 @@ require("lazy").setup({
   "uga-rosa/translate.nvim",
 
   -- gitlinker (permlink)
-  "ruifm/gitlinker.nvim",
-  requires = "nvim-lua/plenary.nvim",
+  {
+    "ruifm/gitlinker.nvim",
+    config = true,
+    dependencies = { "nvim-lua/plenary.nvim" },
+  },
 
   -- nest context preview
-  -- "nvim-treesitter/nvim-treesitter-context",
+  -- {
+  --   "nvim-treesitter/nvim-treesitter-context",
+  --   opts = {
+  --     enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
+  --     max_lines = 5, -- How many lines the window should span. Values <= 0 mean no limit.
+  --     min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+  --     line_numbers = true,
+  --     multiline_threshold = 20, -- Maximum number of lines to show for a single context
+  --     trim_scope = "outer", -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
+  --     mode = "cursor", -- Line used to calculate context. Choices: 'cursor', 'topline'
+  --     -- Separator between context and content. Should be a single character string, like '-'.
+  --     -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+  --     separator = "-",
+  --     zindex = 20, -- The Z-index of the context window
+  --     on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
+  --   }
+  -- },
 
   -- quickfix
   "kevinhwang91/nvim-bqf",
