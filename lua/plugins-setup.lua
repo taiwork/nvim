@@ -28,7 +28,7 @@ require("lazy").setup({
   "inkarkat/vim-ReplaceWithRegister", -- replace with register contents using motion (gr + motion)
 
   -- commenting with gc
-  "numToStr/Comment.nvim",
+  { "numToStr/Comment.nvim", config = true },
 
   -- file explorer
   "nvim-tree/nvim-tree.lua",
@@ -98,7 +98,7 @@ require("lazy").setup({
   "windwp/nvim-ts-autotag", -- autoclose tags
 
   -- git integration
-  "lewis6991/gitsigns.nvim", -- show line modifications on left hand side
+  { "lewis6991/gitsigns.nvim", config = true }, -- show line modifications on left hand side
 
   -- ## original
 
@@ -106,7 +106,7 @@ require("lazy").setup({
   "907th/vim-auto-save",
 
   -- session
-  { "rmagatti/auto-session" },
+  { "rmagatti/auto-session", opts = { silent_restore = false } },
   -- { "ToruIwashita/git-switcher.vim" },
 
   -- copilot
@@ -128,7 +128,18 @@ require("lazy").setup({
   },
 
   -- indent line
-  "Yggdroot/indentLine",
+  {
+    "Yggdroot/indentLine",
+    opt = {
+      debounce = 100,
+      viewport_buffer = {
+        min = 30,
+      },
+      scope = {
+        show_start = false,
+      },
+    }
+  },
 
   -- rainbow-csv
   {
@@ -221,7 +232,7 @@ require("lazy").setup({
   -- csv data viewer
   {
     "vidocqh/data-viewer.nvim",
-    opts = {},
+    opts = { maxLineEachTable = 1000 },
     dependencies = {
       "nvim-lua/plenary.nvim",
       "kkharji/sqlite.lua", -- Optional, sqlite support
