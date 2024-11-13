@@ -329,9 +329,9 @@ require("lazy").setup({
       "rafamadriz/friendly-snippets",
     },
   },
-  {
-    "taiwork/asterisk-nojump.nvim",
-  },
+
+  "taiwork/asterisk-nojump.nvim",
+  { "CopilotC-Nvim/CopilotChat.nvim", build = "make tiktoken" },
 
   -- github copilot chat
   -- {
