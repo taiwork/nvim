@@ -77,7 +77,7 @@ require("lazy").setup({
       { "nvim-treesitter/nvim-treesitter" },
     },
   }, -- enhanced lsp uis
-  "jose-elias-alvarez/typescript.nvim", -- additional functionality for typescript server (e.g. rename file & update imports)
+  -- "jose-elias-alvarez/typescript.nvim", -- additional functionality for typescript server (e.g. rename file & update imports)
   "onsails/lspkind.nvim", -- vs-code like icons for autocompletion
 
   -- formatting & linting
@@ -210,7 +210,14 @@ require("lazy").setup({
   "tpope/vim-bundler",
 
   -- diff view
-  "sindrets/diffview.nvim",
+  {
+    "sindrets/diffview.nvim",
+    opts = {
+      default_args = {
+        DiffviewOpen = { "--imply-local" },
+      }
+    }
+  },
 
   -- smart subvert
   "tpope/vim-abolish",
