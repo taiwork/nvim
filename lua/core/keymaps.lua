@@ -144,6 +144,12 @@ keymap.set("n", "P", "P:RemoveCR<CR>", { noremap = true, silent = true })
 keymap.set("v", "p", "p:RemoveCR<CR>", { noremap = true, silent = true })
 keymap.set("v", "P", "P:RemoveCR<CR>", { noremap = true, silent = true })
 
+-- keymap.set("n", "zn", ":normal zn<CR>:setl foldenable<CR>") -- open fold
+keymap.set("n", "<leader>f0", ":setl foldmethod=indent<CR>:setl foldenable<CR>") -- fold method indent
+keymap.set("n", "<leader>f1", ":setl foldlevel=1<CR>") -- fold level 1
+keymap.set("n", "<leader>f2", ":setl foldlevel=2<CR>") -- fold level 2
+keymap.set("n", "<leader>f3", ":setl foldlevel=3<CR>") -- fold level 3
+
 ----------------------
 -- Script Keybinds
 ----------------------

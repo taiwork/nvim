@@ -14,9 +14,8 @@ saga.setup({
     },
   },
   finder = {
-    max_height = 0.6,
-    left_width = 0.5,
-    right_width = 2,
+    max_height = 0.8,
+    left_width = 0.8,
     keys = { shuttle = { "<C-h>", "<C-l>" } },
   },
   ui = {

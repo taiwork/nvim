@@ -22,6 +22,7 @@ end, {})
 vim.api.nvim_set_keymap("n", "<leader>ccq", "<cmd>lua CopilotChatBuffer()<cr>", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "<leader>cch", "<cmd>CopilotChatHelp<CR>", { noremap = true, silent = true, desc = "CopilotChat - Help actions" })
 vim.api.nvim_set_keymap("v", "<leader>ccp", "<cmd>CopilotChatPrompt<CR>", { noremap = true, silent = true, desc = "CopilotChat - Prompt actions" })
+vim.api.nvim_set_keymap("n", "<leader>cco", "<cmd>CopilotChatOpen<CR>", { noremap = true, silent = true, desc = "CopilotChat - Open" })
 
 return {
   {
@@ -61,6 +62,11 @@ return {
           mapping = '<leader>cd',
           description = "コードのドキュメント作成をお願いする",
         },
+        Masking = {
+          prompt = "変数名や名詞などすべてをマスキングしてアウトプットして",
+          mapping = '<leader>cm',
+          description = "コードのマスキングをお願いする",
+        },
         Tests = {
           prompt = "/COPILOT_TESTS 選択したコードの詳細なユニットテストを書いてください。説明は日本語でお願いします。",
           mapping = '<leader>ct',
@@ -72,16 +78,16 @@ return {
           description = "コードの修正をお願いする",
           selection = select.diagnostics,
         },
-        Commit = {
-          prompt =
-            '実装差分に対するコミットメッセージを日本語で記述してください。',
-          mapping = '<leader>cco',
-          description = "コミットメッセージの作成をお願いする",
-          selection = select.gitdiff,
-        },
+        -- Commit = {
+        --   prompt =
+        --     '実装差分に対するコミットメッセージを英語で記述してください。',
+        --   mapping = '<leader>cco',
+        --   description = "コミットメッセージの作成をお願いする",
+        --   selection = select.gitdiff,
+        -- },
         CommitStaged = {
           prompt =
-            'ステージ済みの変更に対するコミットメッセージを日本語で記述してください。',
+            'ステージ済みの変更に対するコミットメッセージを英語で記述してください。書き方はconventional commit messageのフォーマットに従ってください。タイトルはできる限り簡潔で1文字目は小文字',
           mapping = '<leader>cs',
           description = "ステージ済みのコミットメッセージの作成をお願いする",
           selection = function(source)

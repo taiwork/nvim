@@ -40,6 +40,10 @@ opt.iskeyword:append("-")
 -- swap file
 opt.swapfile = false
 
+-- opt.foldmethod = "indent"
+-- vim.opt.foldlevel = 99
+-- vim.opt.foldenable = true
+
 vim.g.markdown_recommended_style = 0
 
 -- https://github.com/nvim-treesitter/nvim-treesitter/issues/2825#issuecomment-1496747076

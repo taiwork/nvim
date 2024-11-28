@@ -331,7 +331,15 @@ require("lazy").setup({
   },
 
   "taiwork/asterisk-nojump.nvim",
+
   { "CopilotC-Nvim/CopilotChat.nvim", build = "make tiktoken" },
+
+  {
+    'bkad/CamelCaseMotion',
+    init = function()
+      vim.g.camelcasemotion_key = ','
+    end
+  },
 
   -- github copilot chat
   -- {
