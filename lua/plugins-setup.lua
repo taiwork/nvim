@@ -341,7 +341,7 @@ require("lazy").setup({
     end
   },
 
-  'skanehira/getpr.vim',
+  'skanehira/getpr.vim', -- xdg-openのinstallが必要
 
   { import = "plugins"}
 })
