@@ -117,6 +117,9 @@ require("lazy").setup({
         suggestion = {
           enabled = true,
           auto_trigger = true, -- 自動補完を有効化
+          keymap = {
+            accept = "<Tab>",
+          },
         },
         panel = {
           enabled = true,

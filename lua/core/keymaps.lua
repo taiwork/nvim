@@ -36,6 +36,8 @@ keymap.set("n", "{", "gT") -- move to previous tab
 -- visual $ without newline
 keymap.set("v", "$", "$h")
 
+keymap.set("n", "=", "gg=G<C-o>") -- auto indent all lines
+
 ----------------------
 -- Plugin Keybinds
 ----------------------
