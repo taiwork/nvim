@@ -4,9 +4,7 @@ lspkind.init({
   mode = 'symbol',
   preset = 'default',
   symbol_map = {
-    Text = "",
-    Method = "",
-    Function = "",
+    Copilot = "",
     -- 他のシンボルも必要に応じて追加
   },
 })

@@ -107,15 +107,34 @@ require("lazy").setup({
   --   end,
   -- },
 
-  -- copilot
+  -- GitHub Copilot の追加（copilot.lua）
   {
-    "github/copilot.vim",
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    lazy = false,
     config = function()
-      vim.g.copilot_filetypes = {
-        markdown = true,
-        gitcommit = true,
-        yaml = true,
-      }
+      require("copilot").setup({
+        suggestion = {
+          enabled = true,
+          auto_trigger = true, -- 自動補完を有効化
+        },
+        panel = {
+          enabled = true,
+          keymap = {
+            open = "<C-O>",
+          },
+          layout = {
+            position = "bottom", -- | top | left | right
+            ratio = 0.4
+          },
+        },
+        filetypes = {
+          yaml = true,
+          markdown = true,
+          gitcommit = true,
+          -- 必要に応じて他のファイルタイプも追加
+        }
+      })
     end,
   },
 

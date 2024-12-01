@@ -47,11 +47,19 @@ return {
       "hrsh7th/vim-vsnip",
       "hrsh7th/cmp-vsnip",
       "onsails/lspkind.nvim",
+      "zbirenbaum/copilot-cmp",
     },
     config = function()
       require('plugins.lsp.cmp')  -- 外部ファイルに設定を分ける
     end,
   },
+
+  -- Copilot と nvim-cmp の統合プラグイン
+  -- {
+  --   "zbirenbaum/copilot-cmp",
+  --   dependencies = { "zbirenbaum/copilot.lua" },
+  --   config = true
+  -- },
 
   -- Lspsaga for enhanced UI
   {
