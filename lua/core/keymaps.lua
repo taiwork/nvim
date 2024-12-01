@@ -165,18 +165,3 @@ keymap.set("n", "<leader>dr", ":DockerRspec<CR>") -- run rspec in docker
 keymap.set("n", "<C-]>", "viw<C-]>") -- go to definition
 
 keymap.set("i", "<C-v>", "<C-r>+") -- TelescopeのインサートモードでCtrl+Vを押したときにクリップボードの内容を貼り付ける設定
-
--- キーマッピング: <leader><C-O> で前のバッファにジャンプ
--- キーマッピング: <leader><C-I> で次のバッファにジャンプ
--- keymap.set(
---   "n",
---   "<leader><C-o>",
---   "<cmd>lua require('scripts.jump_to_next_buffer').jump_to_next_buffer_in_jumplist(-1)<CR>",
---   { silent = true, noremap = true }
--- )
--- keymap.set(
---   "n",
---   "<leader><C-i>",
---   "<cmd>lua require('scripts.jump_to_next_buffer').jump_to_next_buffer_in_jumplist(1)<CR>",
---   { silent = true, noremap = true }
--- )
