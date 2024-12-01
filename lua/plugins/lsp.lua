@@ -81,13 +81,4 @@ return {
       require('plugins.lsp.lspkind')  -- 外部ファイルに設定を分ける
     end,
   },
-
-  -- Null-ls for linting and formatting
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    dependencies = { "williamboman/mason.nvim" },
-    config = function()
-      require('plugins.lsp.null-ls')  -- 外部ファイルに設定を分ける
-    end,
-  },
 }
