@@ -1,13 +1,7 @@
--- import lspsaga safely
-local saga_status, saga = pcall(require, "lspsaga")
-if not saga_status then
-  return
-end
+local saga = require("lspsaga")
 
 saga.setup({
-  -- keybinds for navigation in lspsaga window
   scroll_preview = { scroll_down = "<C-f>", scroll_up = "<C-b>" },
-  -- use enter to open file with definition preview
   definition = {
     keys = {
       edit = "<CR>",
@@ -15,7 +9,7 @@ saga.setup({
   },
   finder = {
     max_height = 0.8,
-    left_width = 0.8,
+    min_width = 0.8,
     keys = { shuttle = { "<C-h>", "<C-l>" } },
   },
   ui = {

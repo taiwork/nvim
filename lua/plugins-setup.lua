@@ -62,28 +62,6 @@ require("lazy").setup({
   "saadparwaiz1/cmp_luasnip", -- for autocompletion
   "rafamadriz/friendly-snippets", -- useful snippets
 
-  -- managing & installing lsp servers, linters & formatters
-  "williamboman/mason.nvim", -- in charge of managing lsp servers, linters & formatters
-  "williamboman/mason-lspconfig.nvim", -- bridges gap b/w mason & lspconfig
-
-  -- configuring lsp servers
-  "neovim/nvim-lspconfig", -- easily configure language servers
-  "hrsh7th/cmp-nvim-lsp", -- for autocompletion
-  {
-    "glepnir/lspsaga.nvim",
-    branch = "main",
-    dependencies = {
-      { "nvim-tree/nvim-web-devicons" },
-      { "nvim-treesitter/nvim-treesitter" },
-    },
-  }, -- enhanced lsp uis
-  -- "jose-elias-alvarez/typescript.nvim", -- additional functionality for typescript server (e.g. rename file & update imports)
-  "onsails/lspkind.nvim", -- vs-code like icons for autocompletion
-
-  -- formatting & linting
-  "jose-elias-alvarez/null-ls.nvim", -- configure formatters & linters
-  "jayp0521/mason-null-ls.nvim", -- bridges gap b/w mason & null-ls
-
   -- treesitter configuration
   {
     "nvim-treesitter/nvim-treesitter",
@@ -344,4 +322,6 @@ require("lazy").setup({
   'skanehira/getpr.vim', -- xdg-openのinstallが必要
 
   { import = "plugins"}
+}, {
+  reload_on_save = false,
 })
