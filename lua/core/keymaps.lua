@@ -74,6 +74,8 @@ keymap.set("n", "<leader>?", ":Cheat<CR>") -- open cheat sheet
 keymap.set("n", "<leader>gd", ":Gdiff master<CR>") -- open git diff in split window
 keymap.set("n", "<leader>gb", ":Git blame<CR>") -- open git blame in split window
 
+keymap.set("n", "<leader>go", ":GetprOpen<CR>") -- open pull request
+
 -- diffview
 keymap.set("n", "<leader>dh", ":DiffviewOpen HEAD<CR>") -- open HEAD diffview
 keymap.set("n", "<leader>dm", ":DiffviewOpen origin/HEAD...HEAD --imply-local<CR>") -- open master diffview
@@ -81,6 +83,14 @@ keymap.set("n", "<leader>df", ":DiffviewFileHistory --range=origin/HEAD...HEAD -
 keymap.set("n", "<leader>do", ":DiffviewOpen ") -- open diffview
 keymap.set("n", "<leader>dc", ":DiffviewClose<CR>") -- close diffview
 keymap.set("n", "<leader>dr", ":DiffviewRefresh<CR>") -- refresh diffview
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "DiffviewFiles",
+  callback = function()
+    local opts = { noremap = true, silent = true, buffer = true }
+    vim.keymap.set({ "n" }, "gf", "gf:DiffviewClose<CR>", opts)
+  end,
+})
 
 -- git-switcher
 -- keymap.set("n", "<leader>gs", ":Gsw ") -- open git switcher
@@ -100,7 +110,7 @@ keymap.set("n", "<leader>av", ":AV<CR>") -- open alternate file in vertical spli
 keymap.set("n", "<leader>ah", ":AS<CR>") -- open alternate file in horizontal split
 
 -- copilot
-keymap.set("n", "<leader>cp", ":Copilot panel<CR>") -- open copilot panel
+keymap.set("n", "<leader>cp", ":CopilotChatOpen<CR>") -- open copilot chat
 
 -- copy current line
 keymap.set("n", "<leader>y", "^v$hy") -- copy current line

@@ -118,7 +118,7 @@ require("lazy").setup({
           enabled = true,
           auto_trigger = true, -- 自動補完を有効化
           keymap = {
-            accept = "<Tab>",
+            accept = "<C-y>", -- 補完を適用
           },
         },
         panel = {
@@ -215,8 +215,21 @@ require("lazy").setup({
     opts = {
       default_args = {
         DiffviewOpen = { "--imply-local" },
-      }
-    }
+      },
+    },
+    -- config = function()
+    --   local actions = require("diffview.actions")
+    --   require("diffview").setup({
+    --     keymaps = {
+    --       view = {
+    --         { "n", "gf", function()
+    --           actions.close()
+    --           actions.goto_file_edit()
+    --         end, { desc = "open the file in a new tabpage" } },
+    --       }
+    --     },
+    --   })
+    -- end,
   },
 
   -- smart subvert
@@ -331,8 +344,6 @@ require("lazy").setup({
   },
 
   "taiwork/asterisk-nojump.nvim",
-
-  { "CopilotC-Nvim/CopilotChat.nvim", build = "make tiktoken" },
 
   {
     'bkad/CamelCaseMotion',
