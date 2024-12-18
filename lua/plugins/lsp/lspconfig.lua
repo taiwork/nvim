@@ -44,7 +44,7 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- サーバーごとの設定
 local servers = {
-  tsserver = {},
+  ts_ls = {},
   cssls = {},
   tailwindcss = {},
   emmet_ls = {
