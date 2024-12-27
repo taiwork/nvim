@@ -23,12 +23,20 @@ return {
         end
       end
 
+      function CopilotChatAllFiles()
+        local input = vim.fn.input("Quick Chat: ")
+        if input ~= "" then
+          require("CopilotChat").ask(input, { context = "files:full" })
+        end
+      end
+
       function CopilotChatVisual()
         local input = vim.fn.input("Quick Chat: ")
         if input ~= "" then
           require("CopilotChat").ask(input, { selection = select.visual })
         end
       end
+
       -- CopilotChat のヘルプアクションをカスタムコマンドとして定義
       vim.api.nvim_create_user_command("CopilotChatHelp", function()
         local actions = require("CopilotChat.actions")
@@ -42,6 +50,7 @@ return {
       -- end, {})
 
       vim.api.nvim_set_keymap("n", "<leader>ccq", "<cmd>lua CopilotChatBuffer()<cr>", { noremap = true, silent = true })
+      vim.api.nvim_set_keymap("n", "<leader>cca", "<cmd>lua CopilotChatAllFiles()<cr>", { noremap = true, silent = true })
       vim.api.nvim_set_keymap("v", "<leader>ccv", "<cmd>lua CopilotChatVisual()<cr>", { noremap = true, silent = true })
       -- vim.api.nvim_set_keymap("n", "<leader>cch", "<cmd>CopilotChatHelp<CR>", { noremap = true, silent = true, desc = "CopilotChat - Help actions" })
       vim.api.nvim_set_keymap("v", "<leader>ccp", "<cmd>CopilotChatPrompt<CR>", { noremap = true, silent = true, desc = "CopilotChat - Prompt actions" })
@@ -102,9 +111,7 @@ return {
               'ステージ済みの変更に対するコミットメッセージを英語で記述してください。書き方はconventional commit messageのフォーマットに従ってください。タイトルはできる限り簡潔で1文字目は小文字。出力は一つの型だけにして',
             mapping = '<leader>cs',
             description = "ステージ済みのコミットメッセージの作成をお願いする",
-            selection = function(source)
-              return select.gitdiff(source, true)
-            end,
+            context = "git:staged"
           },
         },
       })
