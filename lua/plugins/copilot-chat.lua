@@ -26,7 +26,7 @@ return {
       function CopilotChatAllFiles()
         local input = vim.fn.input("Quick Chat: ")
         if input ~= "" then
-          require("CopilotChat").ask(input, { context = "files:full" })
+          require("CopilotChat").ask(input, { context = "files:full", model = "o1-mini" })
         end
       end
 
@@ -107,11 +107,9 @@ return {
           --   selection = select.gitdiff,
           -- },
           CommitStaged = {
-            prompt =
-              'ステージ済みの変更に対するコミットメッセージを英語で記述してください。書き方はconventional commit messageのフォーマットに従ってください。タイトルはできる限り簡潔で1文字目は小文字。出力は一つの型だけにして',
+            prompt = '> #git:staged\n\nWrite commit message for the change with commitizen convention. Make sure the title has maximum 50 characters and message is wrapped at 72 characters. Wrap the whole message in code block with language gitcommit.',
             mapping = '<leader>cs',
             description = "ステージ済みのコミットメッセージの作成をお願いする",
-            context = "git:staged"
           },
         },
       })
