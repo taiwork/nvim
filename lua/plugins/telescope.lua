@@ -38,7 +38,7 @@ return {
               end,
             },
           },
-          file_ignore_patterns = { ".git/" },
+          file_ignore_patterns = { ".git/", "tags" },
         },
         extensions = {
           live_grep_args = {
