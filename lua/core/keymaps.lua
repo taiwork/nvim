@@ -162,6 +162,8 @@ keymap.set("n", "<leader>f1", ":setl foldlevel=1<CR>") -- fold level 1
 keymap.set("n", "<leader>f2", ":setl foldlevel=2<CR>") -- fold level 2
 keymap.set("n", "<leader>f3", ":setl foldlevel=3<CR>") -- fold level 3
 
+keymap.set("c", "<C-v>", "<C-r>+") -- paste clipboard in command mode
+
 ----------------------
 -- Script Keybinds
 ----------------------
