@@ -77,20 +77,10 @@ keymap.set("n", "<leader>gb", ":Git blame<CR>") -- open git blame in split windo
 keymap.set("n", "<leader>go", ":GetprOpen<CR>") -- open pull request
 
 -- diffview
-keymap.set("n", "<leader>dh", ":DiffviewOpen HEAD<CR>") -- open HEAD diffview
-keymap.set("n", "<leader>dm", ":DiffviewOpen origin/HEAD...HEAD --imply-local<CR>") -- open master diffview
-keymap.set("n", "<leader>df", ":DiffviewFileHistory --range=origin/HEAD...HEAD --right-only --no-merges<CR>") -- open file history diffview
 keymap.set("n", "<leader>do", ":DiffviewOpen ") -- open diffview
-keymap.set("n", "<leader>dc", ":DiffviewClose<CR>") -- close diffview
-keymap.set("n", "<leader>dr", ":DiffviewRefresh<CR>") -- refresh diffview
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "DiffviewFiles",
-  callback = function()
-    local opts = { noremap = true, silent = true, buffer = true }
-    vim.keymap.set({ "n" }, "gf", "gf:DiffviewClose<CR>", opts)
-  end,
-})
+keymap.set("n", "<leader>dh", ":DiffviewOpen HEAD<CR>") -- open HEAD diffview
+keymap.set("n", "<leader>dm", ":DiffviewOpen origin/HEAD...HEAD<CR>") -- open master diffview
+keymap.set("n", "<leader>df", ":DiffviewFileHistory --range=origin/HEAD...HEAD --right-only --no-merges<CR>") -- open file history diffview
 
 -- git-switcher
 -- keymap.set("n", "<leader>gs", ":Gsw ") -- open git switcher
@@ -169,8 +159,7 @@ keymap.set("c", "<C-v>", "<C-r>+") -- paste clipboard in command mode
 ----------------------
 
 -- copy relative file path
-local copy_file_path = require("scripts.copy_file_path")
-keymap.set("n", "<leader>cf", copy_file_path.copy_relative_file_path, { silent = true, noremap = true })
+keymap.set("n", "<leader>cf", require("scripts.copy_file_path").copy_relative_file_path, { silent = true, noremap = true })
 
 keymap.set("n", "<leader>dr", ":DockerRspec<CR>") -- run rspec in docker
 

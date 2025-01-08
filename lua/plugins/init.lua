@@ -201,20 +201,23 @@ return {
       default_args = {
         DiffviewOpen = { "--imply-local" },
       },
+      keymaps = {
+        view = {
+          { "n", "c", ":DiffviewClose<CR>" },
+          { "n", "gf", function()
+            require("diffview.actions").goto_file_edit()
+            vim.cmd("tabclose #")
+          end, { desc = "goto file and close" } },
+        },
+        file_panel = {
+          { "n", "c", ":DiffviewClose<CR>" },
+          { "n", "gf", function()
+            require("diffview.actions").goto_file_edit()
+            vim.cmd("tabclose #")
+          end, { desc = "goto file and close" } },
+        },
+      },
     },
-    -- config = function()
-    --   local actions = require("diffview.actions")
-    --   require("diffview").setup({
-    --     keymaps = {
-    --       view = {
-    --         { "n", "gf", function()
-    --           actions.close()
-    --           actions.goto_file_edit()
-    --         end, { desc = "open the file in a new tabpage" } },
-    --       }
-    --     },
-    --   })
-    -- end,
   },
 
   -- smart subvert

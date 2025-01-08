@@ -5,6 +5,7 @@ function M.copy_relative_file_path()
   local git_path = vim.fn.system("git rev-parse --show-toplevel")
 
   local relative_file_path = string.sub(absolute_file_path, git_path:len() + 1)
+  relative_file_path = relative_file_path:gsub("%[", "\\["):gsub("%]", "\\]")
   vim.fn.setreg("+", relative_file_path)
   print(relative_file_path)
   return true
