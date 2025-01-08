@@ -32,7 +32,7 @@ return {
               ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
               ["<C-]>"] = actions.cycle_history_next,
               ["<C-[>"] = actions.cycle_history_prev,
-              ["<C-c>"] = actions.close,
+              -- ["<C-c>"] = actions.close,
               ["<C-v>"] = function()
                 vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-r>+", true, true, true))
               end,
@@ -48,6 +48,9 @@ return {
                 ["<C-l>"] = lga_actions.quote_prompt(),
                 ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob=**/app/**" }),
                 ["<C-w>"] = lga_actions.quote_prompt({ postfix = " -w " }),
+                ["<C-v>"] = function()
+                  vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<C-r>+", true, true, true))
+                end,
               },
             },
           },

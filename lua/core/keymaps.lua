@@ -163,6 +163,4 @@ keymap.set("n", "<leader>cf", require("scripts.copy_file_path").copy_relative_fi
 
 keymap.set("n", "<leader>dr", ":DockerRspec<CR>") -- run rspec in docker
 
-keymap.set("n", "<C-]>", "viw<C-]>") -- go to definition
-
-keymap.set("i", "<C-v>", "<C-r>+") -- TelescopeのインサートモードでCtrl+Vを押したときにクリップボードの内容を貼り付ける設定
+-- keymap.set("n", "<C-]>", "viw<C-]>") -- go to definition

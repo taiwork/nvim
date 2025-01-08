@@ -207,6 +207,7 @@ return {
           { "n", "gf", function()
             require("diffview.actions").goto_file_edit()
             vim.cmd("tabclose #")
+            vim.cmd("normal zz")
           end, { desc = "goto file and close" } },
         },
         file_panel = {
@@ -214,6 +215,7 @@ return {
           { "n", "gf", function()
             require("diffview.actions").goto_file_edit()
             vim.cmd("tabclose #")
+            vim.cmd("normal zz")
           end, { desc = "goto file and close" } },
         },
       },
