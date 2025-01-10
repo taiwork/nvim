@@ -65,7 +65,7 @@ local servers = {
       },
     },
   },
-  -- solargraph = {},
+  solargraph = {},
 }
 
 for server, config in pairs(servers) do
