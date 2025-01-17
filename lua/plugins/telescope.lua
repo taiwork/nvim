@@ -24,6 +24,7 @@ return {
             "--column",
             "--smart-case",
             "--hidden",
+            '--pcre2',
           },
           mappings = {
             i = {

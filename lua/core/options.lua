@@ -40,9 +40,9 @@ opt.iskeyword:append("-")
 -- swap file
 opt.swapfile = false
 
+-- opt.foldenable = true
 -- opt.foldmethod = "indent"
--- vim.opt.foldlevel = 99
--- vim.opt.foldenable = true
+-- opt.foldlevel = 99
 
 vim.g.markdown_recommended_style = 0
 
