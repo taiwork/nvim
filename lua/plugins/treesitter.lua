@@ -11,7 +11,10 @@ return {
           additional_vim_regex_highlighting = false,
         },
         -- インデントを有効化
-        indent = { enable = true },
+        indent = {
+          enable = true,
+          disable = { "yaml" }
+        },
         -- nvim-ts-autotagプラグインを使用した自動タグ付けを有効化
         autotag = { enable = true },
         -- 必要な言語のパーサーをインストール
