@@ -26,6 +26,12 @@ return {
 
       -- vim.g.rails_projections に設定
       vim.g.rails_projections = projections
+
+      -- disable autocmd set filetype=eruby.yaml
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "eruby.yaml",
+        command = "set filetype=yaml",
+      })
     end,
   },
 }
