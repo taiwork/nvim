@@ -27,7 +27,7 @@ return {
       function CopilotChatAllFiles()
         local input = vim.fn.input("Quick Chat: ")
         if input ~= "" then
-          require("CopilotChat").ask(input, { context = "files:full", model = "o1-mini" })
+          require("CopilotChat").ask(input, { context = "files:full", model = "o3-mini" })
         end
       end
 
@@ -58,6 +58,7 @@ return {
       vim.api.nvim_set_keymap("n", "<leader>cco", "<cmd>CopilotChatOpen<CR>", { noremap = true, silent = true, desc = "CopilotChat - Open" })
 
       require("CopilotChat").setup({
+        model = "o3-mini",
         prompts = {
           Explain = {
             prompt = "/COPILOT_EXPLAIN コードを日本語で説明してください",
