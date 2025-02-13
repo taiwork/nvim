@@ -113,6 +113,21 @@ return {
             mapping = '<leader>cs',
             description = "ステージ済みのコミットメッセージの作成をお願いする",
           },
+          CommitStagedSummary = {
+            prompt = '> #git:staged\n\nWrite a summary of the staged changes in the following format:\n\n'
+              .. '## 概要\n\n'
+              .. '<!-- 変更内容の簡潔な説明 -->\n\n'
+              .. '### 対応チケット\n\n'
+              .. '#<ticket_number>\n\n'
+              .. '### 変更内容\n\n'
+              .. '<!-- Code 的には、具体的な変更点を記載 -->\n\n'
+              .. '### 影響範囲\n\n'
+              .. '<!-- 既存のどの機能に影響があるか -->\n\n'
+              .. '### 期待動作\n\n'
+              .. '<!-- 期待される動作 -->\n\n',
+            mapping = '<leader>css',
+            description = "ステージ済みの変更内容のサマリーを作成する",
+          },
         },
       })
     end,
