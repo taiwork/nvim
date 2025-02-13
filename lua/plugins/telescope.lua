@@ -39,6 +39,7 @@ return {
               end,
             },
           },
+          -- file_ignore_patterns = { ".git/", "tags", "app/services/csv_module/", "app/services/bulk_import_module/" },
           file_ignore_patterns = { ".git/", "tags" },
         },
         extensions = {

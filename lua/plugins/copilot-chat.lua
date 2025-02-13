@@ -17,10 +17,11 @@ return {
 
       -- バッファの内容全体を使って Copilot とチャットする関数
       function CopilotChatBuffer()
-        local input = vim.fn.input("Quick Chat: ")
-        if input ~= "" then
-          require("CopilotChat").ask(input, { selection = select.buffer })
-        end
+        require("CopilotChat").ask("hogeのキーを適切な名前の翻訳のキーにして。意図は伝わるように簡潔すぎずに", { selection = select.buffer }, { model = "o1-mini" })
+        -- local input = vim.fn.input("Quick Chat: ")
+        -- if input ~= "" then
+        --   require("CopilotChat").ask(input, { selection = select.buffer })
+        -- end
       end
 
       function CopilotChatAllFiles()

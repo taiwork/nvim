@@ -157,6 +157,10 @@ keymap.set("c", "<C-v>", "<C-r>+") -- paste clipboard in command mode
 
 keymap.set("n", "4y", "v$hy") -- copy from cursor to end of line
 
+keymap.set("n", "<leader>sj", '/".*[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠ー].*"<CR>')
+keymap.set("n", "<leader>cj", ':let@a = "" | g/".*[ぁ-んァ-ヶｱ-ﾝﾞﾟ一-龠ー].*"/yank A<CR>')
+keymap.set("v", "<leader>ck", ':s/, /:\\r\\thoge: /g<CR>')
+
 ----------------------
 -- Script Keybinds
 ----------------------
