@@ -254,9 +254,6 @@ return {
   -- multiple cursors
   "mg979/vim-visual-multi",
 
-  -- smooth scroll
-  "karb94/neoscroll.nvim",
-
   -- github review
   -- {
   --   "pwntester/octo.nvim",

@@ -125,7 +125,7 @@ return {
               .. '<!-- 既存のどの機能に影響があるか -->\n\n'
               .. '### 期待動作\n\n'
               .. '<!-- 期待される動作 -->\n\n',
-            mapping = '<leader>css',
+            mapping = '<leader>cv',
             description = "ステージ済みの変更内容のサマリーを作成する",
           },
         },
