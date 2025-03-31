@@ -17,17 +17,16 @@ return {
 
       -- バッファの内容全体を使って Copilot とチャットする関数
       function CopilotChatBuffer()
-        require("CopilotChat").ask("hogeのキーを適切な名前の翻訳のキーにして。意図は伝わるように簡潔すぎずに", { selection = select.buffer }, { model = "o1-mini" })
-        -- local input = vim.fn.input("Quick Chat: ")
-        -- if input ~= "" then
-        --   require("CopilotChat").ask(input, { selection = select.buffer })
-        -- end
+        local input = vim.fn.input("Quick Chat: ")
+        if input ~= "" then
+          require("CopilotChat").ask(input, { context = "buffers:visible" })
+        end
       end
 
       function CopilotChatAllFiles()
         local input = vim.fn.input("Quick Chat: ")
         if input ~= "" then
-          require("CopilotChat").ask(input, { context = "files:full", model = "o3-mini" })
+          require("CopilotChat").ask(input, { context = "files:full" })
         end
       end
 
@@ -58,7 +57,7 @@ return {
       vim.api.nvim_set_keymap("n", "<leader>cco", "<cmd>CopilotChatOpen<CR>", { noremap = true, silent = true, desc = "CopilotChat - Open" })
 
       require("CopilotChat").setup({
-        model = "o3-mini",
+        model = "claude-3.7-sonnet",
         prompts = {
           Explain = {
             prompt = "/COPILOT_EXPLAIN コードを日本語で説明してください",
