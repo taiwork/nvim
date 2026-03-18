@@ -170,4 +170,13 @@ keymap.set("n", "<leader>cf", require("scripts.copy_file_path").copy_relative_fi
 
 keymap.set("n", "<leader>dr", ":DockerRspec<CR>") -- run rspec in docker
 
--- keymap.set("n", "<C-]>", "viw<C-]>") -- go to definition
+keymap.set("n", "<C-]>", "viw<C-]>") -- go to definition
+
+-- ｊｊ<Enter> と打ったら、未確定状態でも強制的にノーマルモードへ（実用性最強）
+-- keymap.set('i', 'ｊｊ', '<Esc>:lua vim.fn.system("/mnt/c/tools/zenhan.exe 0")<CR>')
+
+--- IMEの自動変換スクリプトを読み込み
+local ime_convert = require("scripts.ime_auto_convert")
+ime_convert.setup()
+
+
