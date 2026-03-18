@@ -10,15 +10,17 @@ return {
     "williamboman/mason-lspconfig.nvim",
     dependencies = { "williamboman/mason.nvim" },
     config = function()
+      local is_windows = vim.fn.has("win32") == 1
+
       require("mason-lspconfig").setup({
-        ensure_installed = {
+        ensure_installed = is_windows and {} or {
           "cssls",
           "tailwindcss",
           "emmet_ls",
           "lua_ls",
           "ruby_lsp",
         },
-        automatic_installation = true,
+        automatic_installation = not is_windows,
       })
     end,
   },

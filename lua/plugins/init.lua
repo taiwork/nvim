@@ -93,38 +93,38 @@ return {
   -- },
 
   -- GitHub Copilot の追加（copilot.lua）
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    lazy = false,
-    config = function()
-      require("copilot").setup({
-        suggestion = {
-          enabled = true,
-          auto_trigger = true, -- 自動補完を有効化
-          keymap = {
-            accept = "<C-y>", -- 補完を適用
-          },
-        },
-        panel = {
-          enabled = true,
-          keymap = {
-            open = "<C-O>",
-          },
-          layout = {
-            position = "bottom", -- | top | left | right
-            ratio = 0.4
-          },
-        },
-        filetypes = {
-          yaml = true,
-          markdown = true,
-          gitcommit = true,
-          -- 必要に応じて他のファイルタイプも追加
-        }
-      })
-    end,
-  },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   lazy = false,
+  --   config = function()
+  --     require("copilot").setup({
+  --       suggestion = {
+  --         enabled = true,
+  --         auto_trigger = true, -- 自動補完を有効化
+  --         keymap = {
+  --           accept = "<C-y>", -- 補完を適用
+  --         },
+  --       },
+  --       panel = {
+  --         enabled = true,
+  --         keymap = {
+  --           open = "<C-O>",
+  --         },
+  --         layout = {
+  --           position = "bottom", -- | top | left | right
+  --           ratio = 0.4
+  --         },
+  --       },
+  --       filetypes = {
+  --         yaml = true,
+  --         markdown = true,
+  --         gitcommit = true,
+  --         -- 必要に応じて他のファイルタイプも追加
+  --       }
+  --     })
+  --   end,
+  -- },
 
   -- cheatsheet
   {

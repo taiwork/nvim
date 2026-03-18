@@ -8,6 +8,8 @@ return {
       "kkharji/sqlite.lua",
     },
     config = function()
+      local is_windows = vim.fn.has("win32") == 1
+
       local telescope = require("telescope")
       local actions = require("telescope.actions")
       local lga_actions = require("telescope-live-grep-args.actions")
@@ -78,8 +80,11 @@ return {
         },
       })
 
-      -- Telescope拡張機能を読み込み
-      telescope.load_extension("fzf")
+      if not is_windows then
+        telescope.load_extension("fzf")
+      else
+        vim.notify("Windowsではfzf拡張を無効化しています", vim.log.levels.WARN)
+      end
       telescope.load_extension("live_grep_args")
       telescope.load_extension("frecency")
 
