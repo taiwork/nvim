@@ -85,12 +85,12 @@ return {
 
   -- session
   { "rmagatti/auto-session", opts = { silent_restore = false } },
-  -- {
-  --   "ToruIwashita/git-switcher.vim",
-  --   config = function()
-  --     vim.g.gsw_load_session_confirm = "yes"
-  --   end,
-  -- },
+  {
+    "ToruIwashita/git-switcher.vim",
+    config = function()
+      vim.g.gsw_load_session_confirm = "yes"
+    end,
+  },
 
   -- GitHub Copilot の追加（copilot.lua）
   -- {

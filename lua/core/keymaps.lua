@@ -84,8 +84,9 @@ keymap.set("n", "<leader>df", ":DiffviewFileHistory --range=origin/HEAD...HEAD -
 
 -- git-switcher
 -- keymap.set("n", "<leader>gs", ":Gsw ") -- open git switcher
-keymap.set("n", "<leader>gl", ":GswLoad<CR>") -- load session in now session
-keymap.set("n", "<leader>gs", ":GswSave<CR>") -- save current session
+keymap.set("n", "<leader>gl", ":GswLoad") -- load session in now session
+keymap.set("n", "<leader>gs", ":GswSave") -- save current session
+keymap.set("n", "<leader>gt", ":GswSessionList")
 
 -- auto-session
 keymap.set("n", "<leader>ss", ":SessionSave<CR>") -- save session
