@@ -42,7 +42,16 @@ return {
             },
           },
           -- file_ignore_patterns = { ".git/", "tags", "app/services/csv_module/", "app/services/bulk_import_module/" },
-          file_ignore_patterns = { ".git/", "tags" },
+          file_ignore_patterns = {
+            ".git/",
+            "node_modules/",
+            ".next/",
+            "vendor/bundle/",
+            "coverage/",
+            "tags",
+            "package%-lock%.json$",
+            "dist/"
+          },
         },
         extensions = {
           live_grep_args = {
